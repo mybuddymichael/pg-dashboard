@@ -24,11 +24,7 @@ test:
   pool: 5
 
 production:
-  adapter: mysql2
+  adapter: sqlite3
   encoding: utf8
-  reconnect: false
-  database: dashboard_production
+  database: db/production.sqlite3
   pool: 5
-  username: root
-  password:
-  host: localhost
