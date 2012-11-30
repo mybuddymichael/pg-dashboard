@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -28,3 +28,14 @@ production:
   encoding: utf8
   database: db/production.sqlite3
   pool: 5
+
+client_icp_pxp_hopkins:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: client_icp_pxp_hopkins
+  pool: 5
+  username: <%= ENV['dashboard_production_username'] %>
+  password: <%= ENV['dashboard_production_password'] %>
+  host: 10.1.30.60
+  port: 3306
