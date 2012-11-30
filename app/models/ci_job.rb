@@ -16,7 +16,9 @@ class CiJob < ActiveResource::Base
     "#{prefix(prefix_options)}api/json#{query_string(query_options)}"
   end
 
-  def self.list
-    format.decode(connection.get(collection_path, {}).body)["jobs"]
+  def self.all
+    format.decode(connection.get(collection_path, {}).body)["jobs"].collect do |job|
+      find job["name"]
+    end
   end
 end
