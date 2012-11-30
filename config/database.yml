@@ -29,13 +29,16 @@ production:
   database: db/production.sqlite3
   pool: 5
 
-client_icp_pxp_hopkins:
+progauge_production: &progauge_production
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: client_icp_pxp_hopkins
   pool: 5
   username: <%= ENV['dashboard_production_username'] %>
   password: <%= ENV['dashboard_production_password'] %>
   host: 10.1.30.60
   port: 3306
+
+client_icp_pxp_hopkins:
+  <<: *progauge_production
+  database: client_icp_pxp_hopkins
