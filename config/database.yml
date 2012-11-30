@@ -42,3 +42,7 @@ progauge_production: &progauge_production
 client_icp_pxp_hopkins:
   <<: *progauge_production
   database: client_icp_pxp_hopkins
+
+pdms_accounts:
+  <<: *progauge_production
+  database: pdms_accounts
