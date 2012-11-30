@@ -15,4 +15,8 @@ class CiJob < ActiveResource::Base
     prefix_options, query_options = split_options(prefix_options) if query_options.nil?
     "#{prefix(prefix_options)}api/json#{query_string(query_options)}"
   end
+
+  def self.list
+    format.decode(connection.get(collection_path, {}).body)["jobs"]
+  end
 end
