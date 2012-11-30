@@ -11,6 +11,15 @@ gem 'sqlite3'
 gem 'haml'
 
 
+group :development, :test do
+  # gem 'annotate', '2.5.0'
+  gem 'rb-fsevent'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-test'
+  gem 'guard-coffeescript'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
