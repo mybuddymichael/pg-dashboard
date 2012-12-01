@@ -1,24 +1,39 @@
-class CiProject < ActiveResource::Base
-  self.site = "http://jenkins.progauge.us/"
-  self.user = ENV["jenkins_username"]
-  self.password = ENV["jenkins_api_token"]
-  self.collection_name = "job"
+class CiProject
 
-  def self.element_path(name, prefix_options = {}, query_options = nil)
-    check_prefix_options(prefix_options)
-    prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-    "#{prefix(prefix_options)}#{collection_name}/#{URI.parser.escape name.to_s}/api/json#{query_string(query_options)}"
-  end
-
-  def self.collection_path(prefix_options = {}, query_options = nil)
-    check_prefix_options(prefix_options)
-    prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-    "#{prefix(prefix_options)}api/json#{query_string(query_options)}"
-  end
-
+  # Public: Return a list of all CI projects, instantiated as CiProject
+  # objects.
+  #
+  # Returns an Array of CiProjects.
   def self.all
-    format.decode(connection.get(collection_path, {}).body)["jobs"].collect do |job|
-      find job["name"]
+    options = { basic_auth: { username: ENV["jenkins_username"],
+                              password: ENV["jenkins_api_token"]}}
+    response = HTTParty.get("http://jenkins.progauge.us/api/json", options)
+    response_hash = ActiveSupport::JSON.decode(response.body)
+
+    all_projects = response_hash["jobs"].collect do |job|
+      new(job["name"], job["url"])
     end
+
+    all_projects
   end
+
+  # Public: Find a single CiProject by name.
+  #
+  # Returns a CiProject.
+  def self.find_by_name(name)
+    all_projects = self.all
+    all_projects.find { |project| project.name == name.to_s}
+  end
+
+  # Returns the CiProject name.
+  attr_reader :name
+
+  # Returns the CiProject URL.
+  attr_reader :url
+
+  def initialize(name, url)
+    @name = name
+    @url = url
+  end
+
 end
