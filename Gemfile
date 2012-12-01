@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'sqlite3'
 
 gem 'haml'
+gem 'httparty'
 
 
 group :development, :test do
