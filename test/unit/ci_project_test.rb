@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CiJobTest < ActiveSupport::TestCase
+class CiPojectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,4 +1,4 @@
-class CiJob < ActiveResource::Base
+class CiProject < ActiveResource::Base
   self.site = "http://jenkins.progauge.us/"
   self.user = ENV["jenkins_username"]
   self.password = ENV["jenkins_api_token"]
