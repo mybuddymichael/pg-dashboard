@@ -1,12 +1,9 @@
-.box1
-  Project Status
+- @allJobs.each do |job|
+  %p
+    =job.name
+    %a{href:job.lastSuccessfulBuild.url}
+      =job.lastSuccessfulBuild.number
+  %p
+    =job.healthReport[0].description
 
-.box2
-  Git Status.
-  Last 10 commits
 
-.box2
-  Jenkins Status
-
-.box3
-  ICP Status

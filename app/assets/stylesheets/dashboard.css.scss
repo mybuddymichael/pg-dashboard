@@ -3,11 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background: #111;
+  font-family: 'Lato', 'Arial', sans-serif;
+  text-transform: uppercase;
+  color: #555;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
   vertical-align: top;
+}
+a {
+  text-decoration: none;
+  color: red;
 }
 .box1 {
   display: inline-block;
