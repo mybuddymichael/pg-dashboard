@@ -1,5 +1,10 @@
 class CiProject
 
+  BASE_URL   = "http://jenkins.progauge.us/"
+  API_SUFFIX = "/api/json"
+  OPTIONS_HASH = { basic_auth: { username: ENV["jenkins_username"],
+                                 password: ENV["jenkins_api_token"]}}
+
   # Public: Return a list of all CI projects, instantiated as CiProject
   # objects.
   #
