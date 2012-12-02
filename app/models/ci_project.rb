@@ -30,16 +30,16 @@ class CiProject
     new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
   end
 
-  # Returns the CiProject name.
+  # Returns a String of the CiProject name.
   attr_reader :name
 
-  # Returns the CiProject URL.
+  # Returns a String of the CiProject URL.
   attr_reader :url
 
-  # Returns the ID number for the project's last build.
+  # Returns a Fixnum of the ID number for the project's last build.
   attr_reader :last_build_number
 
-  # Returns the URL for the project's last build.
+  # Returns a String of the URL for the project's last build.
   attr_reader :last_build_url
 
   def initialize(name, url, last_build_number, last_build_url)
