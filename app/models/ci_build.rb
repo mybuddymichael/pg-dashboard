@@ -1,9 +1,8 @@
 class CiBuild
 
   BASE_URL   = "http://jenkins.progauge.us/job/"
-  API_SUFFIX = "/api/json"
-  OPTIONS_HASH = { basic_auth: { username: ENV["jenkins_username"],
-                                 password: ENV["jenkins_api_token"]}}
+  API_SUFFIX = CiProject::API_SUFFIX
+  OPTIONS_HASH = CiProject::OPTIONS_HASH
 
   # Public: Get a CiBuild object from a CiProject and build id.
   #
