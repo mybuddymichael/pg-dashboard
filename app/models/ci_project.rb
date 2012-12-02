@@ -10,16 +10,15 @@ class CiProject
   #
   # Returns an Array of CiProjects.
   def self.all
-    options = { basic_auth: { username: ENV["jenkins_username"],
-                              password: ENV["jenkins_api_token"]}}
-    response = HTTParty.get("http://jenkins.progauge.us/api/json", options)
-    response_hash = ActiveSupport::JSON.decode(response.body)
+    list_of_projects = list
 
-    all_projects = response_hash["jobs"].collect do |job|
-      new(job["name"], job["url"])
+    all_ci_projects = list_of_projects.collect do |job|
+      project_response = HTTParty.get(BASE_URL + "job/" + job["name"] + "/" + API_SUFFIX, OPTIONS_HASH)
+      project_hash = ActiveSupport::JSON.decode(project_response.body)
+      new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
     end
 
-    all_projects
+    all_ci_projects
   end
 
   # Public: Find a single CiProject by name.
