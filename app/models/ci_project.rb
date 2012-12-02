@@ -31,9 +31,11 @@ class CiProject
   # Returns the CiProject URL.
   attr_reader :url
 
-  def initialize(name, url)
+  def initialize(name, url, last_build_number, last_build_url)
     @name = name
     @url = url
+    @last_build_number = last_build_number
+    @last_build_url = last_build_url
   end
 
 end
