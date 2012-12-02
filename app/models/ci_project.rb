@@ -43,4 +43,14 @@ class CiProject
     @last_build_url = last_build_url
   end
 
+  private
+
+  # Internal: Get a list of all project names and URLs.
+  #
+  # Returns an Array of Hashes, each Hash having "name" and "url" keys.
+  def self.list
+    response = HTTParty.get(BASE_URL + API_SUFFIX, OPTIONS_HASH)
+    ActiveSupport::JSON.decode(response.body)["jobs"]
+  end
+
 end
