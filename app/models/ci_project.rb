@@ -15,7 +15,10 @@ class CiProject
     all_ci_projects = list_of_projects.collect do |project|
       project_response = HTTParty.get(project["url"] + API_SUFFIX, OPTIONS_HASH)
       project_hash = ActiveSupport::JSON.decode(project_response.body)
-      new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
+      new(project_hash["name"],
+          project_hash["url"],
+          project_hash["lastBuild"]["number"],
+          project_hash["lastBuild"]["url"])
     end
 
     all_ci_projects
@@ -28,7 +31,10 @@ class CiProject
     project_info = list.find { |project| project["name"] == name.to_s}
     return nil if project_info.nil?
     project_hash = fetch_project_hash_by_name(project_info["name"])
-    new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
+    new(project_hash["name"],
+        project_hash["url"],
+        project_hash["lastBuild"]["number"],
+        project_hash["lastBuild"]["url"])
   end
 
   # Returns a String of the CiProject name.
