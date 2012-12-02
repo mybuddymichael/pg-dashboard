@@ -29,4 +29,5 @@ class CiBuild
     @failed_tests = failed_tests
     @total_tests = total_tests
   end
+
 end
