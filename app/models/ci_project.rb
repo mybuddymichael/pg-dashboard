@@ -45,6 +45,11 @@ class CiProject
 
   private
 
+  def self.fetch_project_hash_by_name(name)
+    response = HTTParty.get(BASE_URL + "job/" + name + API_SUFFIX, OPTIONS_HASH)
+    ActiveSupport::JSON.decode(response.body)
+  end
+
   # Internal: Get a list of all project names and URLs.
   #
   # Returns an Array of Hashes, each Hash having "name" and "url" keys.
