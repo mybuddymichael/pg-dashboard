@@ -17,11 +17,11 @@ class CiBuild
         build_hash["actions"][5]["totalCount"])
   end
 
-  #
-  attr_reader :id
+  # Returns a Fixnum of the build's number.
+  attr_reader :number
 
-  def initialize(id, result, failed_tests, total_tests)
-    @id = id
+  def initialize(number, result, failed_tests, total_tests)
+    @number = number
     @result = result
     @failed_tests = failed_tests
     @total_tests = total_tests
