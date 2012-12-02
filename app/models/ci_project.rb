@@ -26,8 +26,9 @@ class CiProject
   #
   # Returns a CiProject.
   def self.find_by_name(name)
-    all_projects = self.all
-    all_projects.find { |project| project.name == name.to_s}
+    project_info = list.find { |project| project["name"] == name.to_s}
+    project_hash = fetch_project_hash_by_name(project_info["name"])
+    new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
   end
 
   # Returns the CiProject name.
