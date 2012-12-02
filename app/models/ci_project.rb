@@ -12,7 +12,7 @@ class CiProject
   def self.all
     list_of_projects = list
 
-    all_ci_projects = list_of_projects.collect do |job|
+    all_ci_projects = list_of_projects.collect do |project|
       project_response = HTTParty.get(BASE_URL + "job/" + job["name"] + "/" + API_SUFFIX, OPTIONS_HASH)
       project_hash = ActiveSupport::JSON.decode(project_response.body)
       new(project_hash["name"], project_hash["url"], project_hash["lastBuild"]["number"], project_hash["lastBuild"]["url"])
