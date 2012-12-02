@@ -17,10 +17,10 @@ class CiBuild
         build_hash["actions"][5]["totalCount"])
   end
 
-  # Returns a Fixnum of the build's number.
+  # Public: Returns a Fixnum of the build's number.
   attr_reader :number
 
-  # Returns a String of the build's result.
+  # Public: Returns a String of the build's result.
   attr_reader :result
 
   def initialize(number, result, failed_tests, total_tests)
