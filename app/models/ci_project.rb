@@ -50,6 +50,10 @@ class CiProject
     @last_build_url = last_build_url
   end
 
+  def last_build
+    CiBuild.find_by_project_name_and_build_id(@name, @last_build_number)
+  end
+
   private
 
   # Internal: Get a Hash of the project's properties, defined by the
