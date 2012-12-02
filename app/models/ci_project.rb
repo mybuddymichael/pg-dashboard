@@ -57,7 +57,7 @@ class CiProject
   end
 
   def last_build
-    CiBuild.find_by_project_name_and_build_id(@name, @last_build_number)
+    CiBuild.find_by_project_name_and_build_number(@name, @last_build_number)
   end
 
   private

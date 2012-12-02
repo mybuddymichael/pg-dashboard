@@ -7,8 +7,8 @@ class CiBuild
   # Public: Get a CiBuild object from a CiProject and build id.
   #
   # Returns a CiBuild.
-  def self.find_by_project_name_and_build_id(project_name, build_id)
-    url = BASE_URL + project_name + "/#{build_id}/" + API_SUFFIX
+  def self.find_by_project_name_and_build_number(project_name, build_number)
+    url = BASE_URL + project_name + "/#{build_number}/" + API_SUFFIX
     response = HTTParty.get(url, OPTIONS_HASH)
     build_hash = ActiveSupport::JSON.decode(response.body)
     new(build_hash["number"],
@@ -17,6 +17,7 @@ class CiBuild
         build_hash["actions"][5]["totalCount"])
   end
 
+  #
   attr_reader :id
 
   def initialize(id, result, failed_tests, total_tests)
