@@ -2,6 +2,6 @@ class DashboardController < ApplicationController
 
   def index
     @title = "ICP"
-    @allJobs = CiJob.all
+    @allJobs = CiProject.all
   end
 end
