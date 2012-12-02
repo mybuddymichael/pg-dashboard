@@ -51,9 +51,10 @@ class CiProject
 
   private
 
-  # Internal: Get a Hash of the project's name and URL.
+  # Internal: Get a Hash of the project's properties, defined by the
+  # CI app's api.
   #
-  # Returns a Hash containing "name" and "url" keys.
+  # Returns a Hash.
   def self.fetch_project_hash_by_name(name)
     response = HTTParty.get(BASE_URL + "job/" + name + API_SUFFIX, OPTIONS_HASH)
     ActiveSupport::JSON.decode(response.body)
