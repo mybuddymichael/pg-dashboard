@@ -19,6 +19,8 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'guard-test'
   gem 'guard-coffeescript'
+
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required
