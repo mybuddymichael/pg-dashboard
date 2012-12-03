@@ -13,8 +13,7 @@ module EnvVar
 
   self.constants.each do |constant|
     if EnvVar.const_get(constant).nil?
-      raise TypeError, "EnvVar::#{constant} is nil! Define the relevant environment variable first."
+      raise TypeError, "EnvVar::#{constant} is nil! Define the relevant environment variable first. (See `config/initializers/env_var.rb` for necessary env vars.)"
     end
   end
 end
-
