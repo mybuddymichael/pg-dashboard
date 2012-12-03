@@ -36,7 +36,7 @@ progauge_production: &progauge_production
   pool: 5
   username: <%= ENV['dashboard_production_username'] %>
   password: <%= ENV['dashboard_production_password'] %>
-  host: 10.1.30.60
+  host: <%= ENV["dashboard_production_hostname"] %>
   port: 3306
 
 pdms_accounts:
