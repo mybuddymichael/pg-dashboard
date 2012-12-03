@@ -60,7 +60,7 @@ class CiProject
   private
 
   # Internal: Get a Hash of the project's properties, defined by the
-  # CI app's api.
+  # CI app's API.
   #
   # Returns a Hash.
   def self.fetch_project_hash_by_name(name)
