@@ -2,6 +2,6 @@ class DashboardController < ApplicationController
 
   def index
     @title = "ICP"
-    @allJobs = CiProject.all
+    # @g = GitDetails.new('~/workspace/scada').remotes
   end
 end

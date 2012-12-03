@@ -10,6 +10,7 @@ gem 'sqlite3'
 
 gem 'haml'
 gem 'httparty'
+gem 'grit'
 
 
 group :development, :test do
