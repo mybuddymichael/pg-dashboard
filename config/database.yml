@@ -34,9 +34,9 @@ progauge_production: &progauge_production
   encoding: utf8
   reconnect: false
   pool: 5
-  username: <%= ENV["dashboard_production_username"] %>
-  password: <%= ENV["dashboard_production_password"] %>
-  host: <%= ENV["dashboard_production_hostname"] %>
+  username: <%= EnvVar::DATABASE_USERNAME %>
+  password: <%= EnvVar::DATABASE_PASSWORD %>
+  host: <%= EnvVar::DATABASE_HOSTNAME %>
   port: 3306
 
 pdms_accounts:
