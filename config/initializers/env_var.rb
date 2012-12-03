@@ -5,6 +5,7 @@ module EnvVar
 
   CI_USERNAME = ENV["dashboard_ci_username"]
   CI_PASSWORD = ENV["dashboard_ci_password"]
+  CI_HOSTNAME = ENV["dashboard_ci_hostname"]
 
   self.constants.each do |constant|
     if EnvVar.const_get(constant).nil?
