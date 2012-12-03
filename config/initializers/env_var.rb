@@ -7,6 +7,10 @@ module EnvVar
   CI_PASSWORD = ENV["dashboard_ci_password"]
   CI_HOSTNAME = ENV["dashboard_ci_hostname"]
 
+  ISSUE_TRACKER_USERNAME = ENV["dashboard_issue_tracker_username"]
+  ISSUE_TRACKER_PASSWORD = ENV["dashboard_issue_tracker_password"]
+  ISSUE_TRACKER_HOSTNAME = ENV["dashboard_issue_tracker_hostname"]
+
   self.constants.each do |constant|
     if EnvVar.const_get(constant).nil?
       raise TypeError, "EnvVar::#{constant} is nil! Define the relevant environment variable first."
