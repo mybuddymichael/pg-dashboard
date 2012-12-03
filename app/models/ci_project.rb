@@ -43,12 +43,6 @@ class CiProject
   # Returns a String of the CiProject URL.
   attr_reader :url
 
-  # Returns a Fixnum of the ID number for the project's last build.
-  attr_reader :last_build_number
-
-  # Returns a String of the URL for the project's last build.
-  attr_reader :last_build_url
-
   def initialize(name, url, last_build_number, last_build_url)
     @name = name
     @url = url
