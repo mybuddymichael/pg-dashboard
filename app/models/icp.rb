@@ -3,4 +3,6 @@ class Icp < ActiveRecord::Base
     establish_connection "pdms_accounts"
     self.table_name = "icp_master"
   end
+
+  has_one :icp_metadata
 end

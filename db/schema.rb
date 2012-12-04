@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130040148) do
+ActiveRecord::Schema.define(:version => 20121204183245) do
+
+  create_table "icp_metadata", :primary_key => "icp_id", :force => true do |t|
+    t.boolean "enabled"
+    t.boolean "check_connection"
+    t.boolean "check_parsing"
+    t.boolean "check_syncing"
+  end
 
   create_table "icps", :force => true do |t|
     t.integer  "company_id",                                                                :null => false
