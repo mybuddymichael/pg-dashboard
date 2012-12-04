@@ -1,6 +1,6 @@
 @import "variables";
 
-@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+@media screen and (max-width: 640px) {
   .header {
     font-weight: bold;
     font-size: 5em;
