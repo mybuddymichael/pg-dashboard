@@ -37,7 +37,7 @@ progauge_production: &progauge_production
   username: <%= EnvVar::DATABASE_USERNAME %>
   password: <%= EnvVar::DATABASE_PASSWORD %>
   host: <%= EnvVar::DATABASE_HOSTNAME %>
-  port: 3306
+  port: 3338
 
 pdms_accounts:
   <<: *progauge_production
