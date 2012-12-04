@@ -1,0 +1,61 @@
+@import "variables";
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .header {
+    font-weight: bold;
+    font-size: 5em;
+    height: 130px;
+    padding-top: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: $darkGrey 0px 6px 0px;
+  }
+  .content {
+    width: 100%;
+    padding-top: 200px;
+  }
+  .icps {
+    width: 100%;
+  }
+  .jenkins {
+    width: 100%;
+  }
+  .icpCard {
+    margin:auto;
+    width: 90%;
+    margin-bottom: 30px;
+    font-size: 5em;
+    border-radius: 10px;
+  }
+  .icpTitle {
+    font-weight: bold;
+    display: inline-block;
+    padding: 30px;
+  }
+  .icpIndicator {
+    display: inline-block;
+    margin-top: 20px;
+    padding-right: 10%;
+    float: right;
+  }
+  .icpStatus {
+    font-size: .6em;
+    padding-left: 30px;
+    padding-bottom: 30px;
+  }
+  .blue {
+    background: #2090ae;
+    box-shadow: #15708c 0px 6px 0px;
+  }
+  .blue:hover { background: #15708c; }
+  .orange {
+    background: #b35536;
+    box-shadow: #8c422a 0px 6px 0px;
+  }
+  .orange:hover { background: #8c422a; }
+  .grey{
+    background: #55606e;
+    box-shadow: #485463 0px 6px 0px;
+  }
+}
+
