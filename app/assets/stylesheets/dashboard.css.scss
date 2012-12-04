@@ -11,7 +11,7 @@
     padding-top: 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: $darkGrey 0px 3px 0px;
+    box-shadow: $transparent-grey 0px 3px 0px;
   }
   .content {
     width: 100%;
@@ -49,18 +49,18 @@
   /****** COLORS  *******/
 
   .blue {
-    background: $blue;
-    box-shadow: $darkBlue 0px 3px 0px;
+    background: $light-blue;
+    box-shadow: $transparent-light-blue 0px 3px 0px;
   }
-  .blue:hover { background: $darkBlue; }
+  .blue:hover { background: $transparent-light-blue; }
   .orange {
     background: $orange;
-    box-shadow: $darkOrange 0px 3px 0px;
+    box-shadow: $transparent-orange 0px 3px 0px;
   }
-  .orange:hover { background: $darkOrange; }
+  .orange:hover { background: $transparent-orange; }
   .grey{
     background: $grey;
-    box-shadow: $darkGrey 0px 3px 0px;
+    box-shadow: $transparent-grey 0px 3px 0px;
   }
 }
 
@@ -72,7 +72,7 @@
     padding-top: 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: $darkGrey 0px 3px 0px;
+    box-shadow: $transparent-grey 0px 3px 0px;
   }
   .content {
     width: 100%;
@@ -112,18 +112,18 @@
   /****** COLORS  *******/
 
   .blue {
-    background: $blue;
-    box-shadow: $darkBlue 0px 3px 0px;
+    background: $light-blue;
+    box-shadow: $transparent-light-blue 0px 3px 0px;
   }
-  .blue:hover { background: $darkBlue; }
+  .blue:hover { background: $transparent-light-blue; }
   .orange {
     background: $orange;
-    box-shadow: $darkOrange 0px 3px 0px;
+    box-shadow: $transparent-orange 0px 3px 0px;
   }
-  .orange:hover { background: $darkOrange; }
+  .orange:hover { background: $transparent-orange; }
   .grey{
     background: $grey;
-    box-shadow: $darkGrey 0px 3px 0px;
+    box-shadow: $transparent-grey 0px 3px 0px;
   }
 }
 
