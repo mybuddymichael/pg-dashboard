@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204183245) do
+ActiveRecord::Schema.define(:version => 20121204201445) do
 
-  create_table "icp_metadata", :primary_key => "icp_id", :force => true do |t|
-    t.boolean "enabled"
-    t.boolean "check_connection"
-    t.boolean "check_parsing"
-    t.boolean "check_syncing"
+  create_table "icp_metadata", :id => false, :force => true do |t|
+    t.integer "icp_id",                             :null => false
+    t.boolean "enabled",          :default => true
+    t.boolean "check_connection", :default => true
+    t.boolean "check_parsing",    :default => true
+    t.boolean "check_syncing",    :default => true
   end
 
   create_table "icps", :force => true do |t|
@@ -41,13 +42,6 @@ ActiveRecord::Schema.define(:version => 20121204183245) do
     t.string   "bios_password",           :limit => 45,                                     :null => false
     t.boolean  "deployed",                               :default => false,                 :null => false
     t.string   "timezone",                               :default => "UTC",                 :null => false
-  end
-
-  create_table "pxp_hopkins_primary_record_sets", :force => true do |t|
-    t.integer  "equipmentID", :limit => 3,                    :null => false
-    t.datetime "obs_date",                                    :null => false
-    t.datetime "timestamp",                                   :null => false
-    t.boolean  "deleted",                  :default => false, :null => false
   end
 
 end
