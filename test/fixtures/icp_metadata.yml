@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: icp_metadata
+#
+#  icp_id           :integer          not null
+#  enabled          :boolean          default(TRUE)
+#  check_connection :boolean          default(TRUE)
+#  check_parsing    :boolean          default(TRUE)
+#  check_syncing    :boolean          default(TRUE)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

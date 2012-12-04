@@ -4,73 +4,16 @@
 .header Header
 .content
   .icps
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-  .jenkins
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
-      .icpStatus Last Sync: 12 min ago
-    .icpCard.grey
-      .icpTitle Sideswipe
-    .icpCard.blue
-      .icpTitle Warpath
-      .icpIndicator ✔
-    .icpCard.orange
-      .icpTitle Bonecrusher
-      .icpIndicator ✘
+    - @icps.each do |icp|
+      - if icp.last_connect_time < @now
+        .icpCard.orange
+          .icpTitle
+            =icp.icp_name
+            =icp.last_connect_time
+            =@now
+          .icpIndicator ✔
+      - else
+        .icpCard.blue
+          .icpTitle
+            =icp.icp_name
+          .icpIndicator ✔
