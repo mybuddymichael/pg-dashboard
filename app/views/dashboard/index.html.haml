@@ -14,9 +14,9 @@
           .icp-status-indicator ✔
   %section.ci-projects
     - @ci_projects.each do |project|
-      %div{class: "ci-project-card #{project.last_build.result}"}
-        .ci-project-name= project.name
-        - if project.last_build.result == "FAILURE"
-          .icp-status-indicator ✘
-        - else
+      %div{class: "ci-project-card #{project[:last_build_result]}"}
+        .ci-project-name= project[:name]
+        - if project[:last_build_result] == "SUCCESS"
           .icp-status-indicator ✔
+        - else
+          .icp-status-indicator ✘
