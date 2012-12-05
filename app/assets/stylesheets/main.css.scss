@@ -1,9 +1,10 @@
 @import "config";
 
 body {
+  background-color: $dark-blue;
+
+  color: $dark-blue;
   font-family: Helvetica, Arial, sans-serif;
-  color: #333;
-  background-color: #27313e;
 }
 a {
   text-decoration: none;
