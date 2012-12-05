@@ -39,6 +39,8 @@ header {
 .icp-card {
   @include padding(10, 5, 10, 5, $max-width);
 
+  @include font-size(24);
+
   &.good {
     background-color: $light-blue;
     border-bottom: 2px solid $dark-light-blue;
