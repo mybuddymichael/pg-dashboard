@@ -1,19 +1,14 @@
--# - @g.each do |commit|
--#   %p
--#     =commit.name
+-# ✔ ✘
+
 .header Header
 .content
   .icps
-    - @icps.each do |icp|
-      - if icp.last_connect_time < @now
-        .icpCard.orange
-          .icpTitle
-            =icp.icp_name
-            =icp.last_connect_time
-            =@now
-          .icpIndicator ✔
-      - else
-        .icpCard.blue
-          .icpTitle
-            =icp.icp_name
+    - @all_icps.each do |icp|
+      %div{class: " icpCard #{icp["status"]}"}
+        .icpTitle
+          =icp["name"]
+          =icp["status"]
+        - if icp["status"] == "orange"
+          .icpIndicator ✘
+        - else
           .icpIndicator ✔
