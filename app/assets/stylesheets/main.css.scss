@@ -62,7 +62,7 @@ header {
   .status-indicator {
     display: inline;
     float: right;
-    @include margin-top(-6, $max-width);
+    margin-top: -7px;
 
     @include font-size(28);
   }
