@@ -53,6 +53,6 @@ class DashboardController < ApplicationController
     tz = tz / 3600
     converted_time = time.to_datetime.change(offset: "#{tz}")
 
-    return converted_time.utc
+    converted_time.utc
   end
 end
