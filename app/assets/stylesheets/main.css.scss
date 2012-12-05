@@ -14,6 +14,7 @@ a {
   text-decoration: none;
 }
 
+// Mobile-first: starting with styles up to 480px wide...
 $max-width: 480;
 
 .header {
