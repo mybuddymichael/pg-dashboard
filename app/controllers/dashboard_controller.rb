@@ -38,9 +38,6 @@ class DashboardController < ApplicationController
         url: project.url,
         last_build_result: result }
     end
-
-    logger.info(@all_icps[0])
-    logger.info("------------------------------------------------")
   end
 
 
