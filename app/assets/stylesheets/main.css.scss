@@ -44,7 +44,7 @@ header {
 
   &.bad {
     background-color: $orange;
-    box-shadow: $dark-orange 0 2px 0;
+    border-bottom: 2px solid $dark-orange;
   }
 
   &.ignored {
