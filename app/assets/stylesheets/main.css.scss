@@ -30,3 +30,8 @@ $max-width: 480;
   @include font-size(14);
   text-align: center;
 }
+
+.content {
+  max-width: $max-width;
+  @include margin(30, 0, 10, 0, $max-width);
+}
