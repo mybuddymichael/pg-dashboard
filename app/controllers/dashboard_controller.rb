@@ -8,16 +8,22 @@ class DashboardController < ApplicationController
 
     @all_icps = Icp.find(:all).collect do |icp|
       status = :good
+      messages = []
+
       if icp.last_connect_time < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
+        messages += "Last connection was at #{icp.last_connect_time}"
       elsif icp.last_sync_time < (now - (60 * icp.sync_interval))
         status = :bad
+        messages += "Last sync was at #{icp.last_sync_time}"
       elsif icp.last_parse_time < (now - (2 * 60 * icp.sync_interval))
         status = :bad
+        messages += "Last parse was at #{icp.last_parse_time}"
       end
 
       { name: icp.icp_name,
-        status: status }
+        status: status,
+        messages: messages }
     end
 
     @ci_projects = CiProject.all.collect do |project|
