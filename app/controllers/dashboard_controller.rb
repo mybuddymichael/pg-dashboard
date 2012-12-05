@@ -20,7 +20,11 @@ class DashboardController < ApplicationController
         status: status }
     end
 
-    @ci_projects = CiProject.all
+    @ci_projects = CiProject.all.collect do |project|
+      { name: project.name,
+        url: project.url,
+        last_build_result: project.last_build.result }
+    end
 
     logger.info(@all_icps[0])
     logger.info("------------------------------------------------")
