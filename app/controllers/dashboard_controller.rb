@@ -7,13 +7,13 @@ class DashboardController < ApplicationController
     now = Time.now.utc - (60*60*8)
 
     @all_icps = Icp.find(:all).collect do |icp|
-      status = "good"
+      status = :good
       if icp.last_connect_time < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
-        status = "bad"
+        status = :bad
       elsif icp.last_sync_time < (now - (60 * icp.sync_interval))
-        status = "bad"
+        status = :bad
       elsif icp.last_parse_time < (now - (2 * 60 * icp.sync_interval))
-        status = "bad"
+        status = :bad
       end
 
       { name: icp.icp_name,
@@ -21,7 +21,7 @@ class DashboardController < ApplicationController
     end
 
     @ci_projects = CiProject.all.collect do |project|
-      result = (project.last_build.result == "SUCCESS") ? "good" : "bad"
+      result = (project.last_build.result == "SUCCESS") ? :good : :bad
 
       { name: project.name,
         url: project.url,
