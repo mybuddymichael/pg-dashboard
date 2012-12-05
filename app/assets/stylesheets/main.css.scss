@@ -13,9 +13,11 @@ a {
 }
 
 .header {
-  width: 100%;
-  text-align: center;
-  background-color: $grey;
   position: fixed;
   z-index: 1;
+  width: 100%;
+
+  background-color: $grey;
+
+  text-align: center;
 }
