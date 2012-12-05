@@ -7,11 +7,11 @@ class DashboardController < ApplicationController
     @all_icps = Icp.find(:all).collect do |icp|
       status = "blue"
       if icp.last_connect_time < (now - icp_connect_interval)
-        @status = "orange"
+        status = "orange"
       elsif icp.last_sync_time < (now - (60*icp.sync_interval))
-        @status = "orange"
+        status = "orange"
       elsif icp.last_parse_time < (now - (2*60*icp.sync_interval))
-        @status = "orange"
+        status = "orange"
       end
 
       { name: icp.icp_name,
