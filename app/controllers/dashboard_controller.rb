@@ -10,9 +10,9 @@ class DashboardController < ApplicationController
       status = "good"
       if icp.last_connect_time < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = "bad"
-      elsif icp.last_sync_time < (now - (60*icp.sync_interval))
+      elsif icp.last_sync_time < (now - (60 * icp.sync_interval))
         status = "bad"
-      elsif icp.last_parse_time < (now - (2*60*icp.sync_interval))
+      elsif icp.last_parse_time < (now - (2 * 60 * icp.sync_interval))
         status = "bad"
       end
 
