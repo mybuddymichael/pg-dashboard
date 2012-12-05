@@ -8,6 +8,11 @@ class DashboardController < ApplicationController
 
     @all_icps = get_all_icps
     @ci_projects = get_all_ci_projects
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => { all_icps: @all_icps, all_ci_projects: @ci_projects}}
+    end
   end
 
 
