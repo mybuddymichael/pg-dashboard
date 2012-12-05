@@ -39,7 +39,7 @@ header {
 .icp-card {
   &.good {
     background-color: $light-blue;
-    box-shadow: $dark-light-blue 0 2px 0;
+    border-bottom: 2px solid $dark-light-blue;
   }
 
   &.bad {
@@ -49,7 +49,7 @@ header {
 
   &.ignored {
     background: $grey;
-    box-shadow: $dark-grey 0 2px 0;
+    border-bottom: 2px solid $dark-grey;
   }
 
   .messages {
