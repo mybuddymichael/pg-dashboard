@@ -27,5 +27,6 @@ $max-width: 480;
   background-color: $grey;
   box-shadow: $transparent-grey 0px 2px 0px;
 
+  @include font-size(14);
   text-align: center;
 }
