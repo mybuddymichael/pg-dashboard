@@ -33,5 +33,5 @@ $max-width: 480;
 
 .content {
   max-width: $max-width;
-  @include margin(30, 0, 10, 0, $max-width);
+  margin: 21px 0 10px 0;
 }
