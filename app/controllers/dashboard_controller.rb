@@ -5,9 +5,17 @@ class DashboardController < ApplicationController
 
   def index
     @title = "ICP"
-    now = Time.now.utc
 
-    @all_icps = Icp.find(:all).collect do |icp|
+    @all_icps = get_all_icps
+    @ci_projects = get_all_ci_projects
+  end
+
+
+  private
+
+  def get_all_icps
+    now = Time.now.utc
+    Icp.find(:all).collect do |icp|
       status = :good
       messages = []
 
@@ -34,8 +42,10 @@ class DashboardController < ApplicationController
         status: status,
         messages: messages }
     end
+  end
 
-    @ci_projects = CiProject.all.collect do |project|
+  def get_all_ci_projects
+    CiProject.all.collect do |project|
       result = (project.last_build.result == "SUCCESS") ? :good : :bad
 
       { name: project.name,
@@ -43,8 +53,6 @@ class DashboardController < ApplicationController
         last_build_result: result }
     end
   end
-
-  private
 
   # Internal: Convert an ActiveSupport::TimeWithZone object to the
   # timezone provided in the "timezone" String, without changing the
