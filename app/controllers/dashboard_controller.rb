@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render :xml => { all_icps: @all_icps, all_ci_projects: @ci_projects}}
+      format.json { render :json => { all_icps: @all_icps, all_ci_projects: @ci_projects}}
     end
   end
 
