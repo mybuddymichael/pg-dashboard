@@ -19,6 +19,9 @@ class DashboardController < ApplicationController
       { name: icp.icp_name,
         status: status }
     end
+
+    @ci_projects = CiProject.all
+
     logger.info(@all_icps[0])
     logger.info("------------------------------------------------")
   end
