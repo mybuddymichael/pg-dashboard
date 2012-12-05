@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 
   def index
     @title = "ICP"
-    now = Time.now.utc - (60*60*8)
+    now = Time.now.utc - (60 * 60 * 8)
 
     @all_icps = Icp.find(:all).collect do |icp|
       status = :good
