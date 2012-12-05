@@ -46,7 +46,7 @@ class DashboardController < ApplicationController
 
   private
 
-  def convert_time (time, timezone)
+  def convert_time(time, timezone)
     logger.info("--------------------------------------------")
     logger.info(timezone)
     tz = TZInfo::Timezone.get(timezone).current_period.utc_total_offset
