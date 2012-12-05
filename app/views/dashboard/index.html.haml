@@ -8,8 +8,7 @@
       %div{class: "icp-card #{icp[:status]}"}
         .name
           =icp[:name]
-          =icp[:status]
-        - if icp[:status] == "good"
+        - if icp[:status] == :good
           .status-indicator ✔
         - else
           .status-indicator ✘
