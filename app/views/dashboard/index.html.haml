@@ -6,13 +6,13 @@
   %section.icps
     - @all_icps.each do |icp|
       %div{class: "icp-card #{icp[:status]}"}
-        .icp-title
+        .name
           =icp[:name]
           =icp[:status]
         - if icp[:status] == "good"
-          .icp-status-indicator ✔
+          .status-indicator ✔
         - else
-          .icp-status-indicator ✘
+          .status-indicator ✘
         .messages
           - icp[:messages].each do |message|
             .message= message
@@ -20,8 +20,8 @@
   %section.ci-projects
     - @ci_projects.each do |project|
       %div{class: "ci-project-card #{project[:last_build_result]}"}
-        .ci-project-name= project[:name]
+        .name= project[:name]
         - if project[:last_build_result] == "good"
-          .icp-status-indicator ✔
+          .status-indicator ✔
         - else
-          .icp-status-indicator ✘
+          .status-indicator ✘
