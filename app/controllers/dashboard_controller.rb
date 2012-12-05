@@ -17,20 +17,17 @@ class DashboardController < ApplicationController
 
       if last_connect < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
-        messages.push(
-          "Last connection was #{time_ago_in_words(last_connect)} ago")
+        messages.push("Last connection was #{time_ago_in_words(last_connect)} ago")
       end
 
       if last_sync < (now - (60 * icp.sync_interval))
         status = :bad
-        messages.push(
-          "Last sync was #{time_ago_in_words(last_sync)} ago")
+        messages.push("Last sync was #{time_ago_in_words(last_sync)} ago")
       end
 
       if last_parse < (now - (2 * 60 * icp.sync_interval))
         status = :bad
-        messages.push(
-          "Last parse was #{time_ago_in_words(last_parse)} ago")
+        messages.push("Last parse was #{time_ago_in_words(last_parse)} ago")
       end
 
       { name: icp.icp_name,
