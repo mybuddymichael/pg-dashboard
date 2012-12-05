@@ -55,4 +55,17 @@ header {
   .messages {
     @include font-size(10);
   }
+
+  .icp-title {
+    font-weight: bold;
+    display: inline-block;
+    padding: 30px;
+  }
+
+  .icp-status-indicator {
+    display: inline-block;
+    margin-top: 20px;
+    padding-right: 10%;
+    float: right;
+  }
 }
