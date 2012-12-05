@@ -51,7 +51,7 @@ class DashboardController < ApplicationController
     logger.info(timezone)
     tz = TZInfo::Timezone.get(timezone).current_period.utc_total_offset
     tz = tz / 3600
-    converted_time = time.to_datetime.change(:offset => "#{tz}")
+    converted_time = time.to_datetime.change(offset: "#{tz}")
 
     return converted_time.utc
   end
