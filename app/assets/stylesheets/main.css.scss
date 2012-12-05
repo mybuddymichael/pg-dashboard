@@ -56,13 +56,13 @@ header {
     @include font-size(10);
   }
 
-  .icp-title {
+  .name {
     font-weight: bold;
     display: inline-block;
     padding: 30px;
   }
 
-  .icp-status-indicator {
+  .status-indicator {
     display: inline-block;
     margin-top: 20px;
     padding-right: 10%;
