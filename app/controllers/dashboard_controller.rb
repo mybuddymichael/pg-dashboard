@@ -1,12 +1,14 @@
 class DashboardController < ApplicationController
 
+  ICP_CONNECT_INTERVAL = 120
+
   def index
     @title = "ICP"
-    icp_connect_interval = (120)  # seconds
     now = Time.now.utc - (60*60*8)
+
     @all_icps = Icp.find(:all).collect do |icp|
       status = "blue"
-      if icp.last_connect_time < (now - icp_connect_interval)
+      if icp.last_connect_time < (now - ICP_CONNECT_INTERVAL)
         status = "orange"
       elsif icp.last_sync_time < (now - (60*icp.sync_interval))
         status = "orange"
@@ -20,4 +22,5 @@ class DashboardController < ApplicationController
     logger.info(@all_icps[0])
     logger.info("------------------------------------------------")
   end
+
 end
