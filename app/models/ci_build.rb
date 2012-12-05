@@ -13,8 +13,8 @@ class CiBuild
     build_hash = ActiveSupport::JSON.decode(response.body)
     new(build_hash["number"],
         build_hash["result"],
-        build_hash["actions"][5]["failCount"],
-        build_hash["actions"][5]["totalCount"])
+        build_hash["actions"][4]["failCount"],
+        build_hash["actions"][4]["totalCount"])
   end
 
   # Public: Returns a Fixnum of the build's number.
