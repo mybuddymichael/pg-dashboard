@@ -16,7 +16,7 @@
     - @ci_projects.each do |project|
       %div{class: "ci-project-card #{project[:last_build_result]}"}
         .ci-project-name= project[:name]
-        - if project[:last_build_result] == "SUCCESS"
+        - if project[:last_build_result] == "good"
           .icp-status-indicator ✔
         - else
           .icp-status-indicator ✘

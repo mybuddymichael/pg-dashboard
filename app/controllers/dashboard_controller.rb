@@ -21,9 +21,11 @@ class DashboardController < ApplicationController
     end
 
     @ci_projects = CiProject.all.collect do |project|
+      result = (project.last_build.result == "SUCCESS") ? "good" : "bad"
+
       { name: project.name,
         url: project.url,
-        last_build_result: project.last_build.result }
+        last_build_result: result }
     end
 
     logger.info(@all_icps[0])
