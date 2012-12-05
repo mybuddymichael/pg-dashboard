@@ -8,3 +8,29 @@ $transparent-orange: transparentize($orange, 0.7);
 
 $grey: #55606e;
 $transparent-grey: transparentize($grey, 0.7);
+
+
+@mixin link($px: 2, $style: solid, $color: $dark-blue) {
+  text-decoration: none;
+  border-bottom: $px*1px $style $color;
+}
+
+@mixin font-size($font-size: 16) {
+  font-size: $font-size*1px;
+  font-size: $font-size/16*1rem;
+}
+
+@mixin line-height($line-height: 20) {
+  line-height: $line-height*1px;
+  line-height: $line-height/16*1rem;
+}
+
+@mixin margin($t, $r, $b, $l, $container) {
+  margin: percentage($t/$container) percentage($r/$container)
+          percentage($b/$container) percentage($l/$container);
+}
+
+@mixin padding($t, $r, $b, $l, $container) {
+  padding: percentage($t/$container) percentage($r/$container)
+           percentage($b/$container) percentage($l/$container);
+}
