@@ -9,8 +9,10 @@ class CiBuild
   # Returns a CiBuild.
   def self.find_by_project_name_and_build_number(project_name, build_number)
     url = BASE_URL + project_name + "/#{build_number}/" + API_SUFFIX
+
     response = HTTParty.get(url, OPTIONS_HASH)
     build_hash = ActiveSupport::JSON.decode(response.body)
+
     new(build_hash["number"],
         build_hash["result"],
         build_hash["actions"][4]["failCount"],
