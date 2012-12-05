@@ -12,9 +12,10 @@
           .status-indicator ✔
         - else
           .status-indicator ✘
-        .messages
-          - icp[:messages].each do |message|
-            .message= message
+        - if !icp[:messages].empty?
+          .messages
+            - icp[:messages].each do |message|
+              .message= message
 
   %section.ci-projects
     - @ci_projects.each do |project|
