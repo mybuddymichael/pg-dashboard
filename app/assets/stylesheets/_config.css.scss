@@ -1,12 +1,15 @@
 $dark-blue: #27313e;
 
 $light-blue: #2090ae;
+$dark-light-blue: darken($light-blue, 10%);
 $transparent-light-blue: transparentize($light-blue, 0.7);
 
 $orange: #de5c31;
+$dark-orange: darken($orange, 10%);
 $transparent-orange: transparentize($orange, 0.7);
 
 $grey: #55606e;
+$dark-grey: darken($grey, 10%);
 $transparent-grey: transparentize($grey, 0.7);
 
 
