@@ -11,6 +11,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'httparty'
 gem 'grit'
+gem 'tzinfo'
 
 
 group :development, :test do

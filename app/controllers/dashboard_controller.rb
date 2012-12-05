@@ -1,14 +1,15 @@
 class DashboardController < ApplicationController
 
-  ICP_CONNECTION_THRESHOLD_IN_SECONDS = 120
+  ICP_CONNECTION_THRESHOLD_IN_SECONDS = 180
 
   def index
     @title = "ICP"
-    now = Time.now.utc - (60 * 60 * 8)
+    now = Time.now.utc
 
     @all_icps = Icp.find(:all).collect do |icp|
       status = :good
       messages = []
+      last_connect = convert_time(icp.last_connect_time, icp.timezone)
 
       if icp.last_connect_time < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
@@ -42,4 +43,16 @@ class DashboardController < ApplicationController
     logger.info("------------------------------------------------")
   end
 
+
+  private
+
+  def convert_time (time, timezone)
+    logger.info("--------------------------------------------")
+    logger.info(timezone)
+    tz = TZInfo::Timezone.get("#{timezone}").current_period.utc_total_offset
+    tz = tz / 3600
+    converted_time = time.to_datetime.change(:offset => "#{tz}")
+
+    return converted_time.utc
+  end
 end
