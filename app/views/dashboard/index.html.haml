@@ -2,6 +2,7 @@
 
 %header refreshing in 7 seconds...
 .content
+
   %section.icps
     - @all_icps.each do |icp|
       %div{class: "icp-card #{icp[:status]}"}
@@ -15,6 +16,7 @@
         .messages
           - icp[:messages].each do |message|
             .message= message
+
   %section.ci-projects
     - @ci_projects.each do |project|
       %div{class: "ci-project-card #{project[:last_build_result]}"}
