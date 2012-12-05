@@ -8,10 +8,10 @@
         .icp-title
           =icp[:name]
           =icp[:status]
-        - if icp[:status] == "orange"
-          .icp-status-indicator ✘
-        - else
+        - if icp[:status] == "good"
           .icp-status-indicator ✔
+        - else
+          .icp-status-indicator ✘
   %section.ci-projects
     - @ci_projects.each do |project|
       %div{class: "ci-project-card #{project[:last_build_result]}"}
