@@ -6,14 +6,17 @@ body {
   color: $dark-blue;
   font-family: Helvetica, Arial, sans-serif;
 }
+
 a {
-  text-decoration: none;
   color: red;
+  text-decoration: none;
 }
+
 p {
   margin: 0;
   margin-bottom: 5px;
 }
+
 .header {
   width: 100%;
   text-align: center;
@@ -21,4 +24,3 @@ p {
   position: fixed;
   z-index: 1;
 }
-
