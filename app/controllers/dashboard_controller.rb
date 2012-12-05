@@ -47,7 +47,6 @@ class DashboardController < ApplicationController
     end
   end
 
-
   private
 
   # Internal: Convert an ActiveSupport::TimeWithZone object to the
