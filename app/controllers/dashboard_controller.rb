@@ -15,7 +15,6 @@ class DashboardController < ApplicationController
     end
   end
 
-
   private
 
   def get_all_icps
