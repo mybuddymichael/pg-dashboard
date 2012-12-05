@@ -52,10 +52,6 @@ header {
     border-bottom: 2px solid $dark-grey;
   }
 
-  .messages {
-    @include font-size(10);
-  }
-
   .name {
     font-weight: bold;
     display: inline-block;
@@ -67,5 +63,9 @@ header {
     margin-top: 20px;
     padding-right: 10%;
     float: right;
+  }
+
+  .messages {
+    @include font-size(10);
   }
 }
