@@ -67,5 +67,6 @@ header {
 
   .messages {
     @include font-size(10);
+    font-weight: normal;
   }
 }
