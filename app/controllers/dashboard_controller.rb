@@ -14,10 +14,8 @@ class DashboardController < ApplicationController
         @status = "orange"
       end
 
-      {
-        "name" => icp.icp_name,
-        "status" => @status,
-      }
+      { name: icp.icp_name,
+        status: status }
     end
     logger.info(@all_icps[0])
     logger.info("------------------------------------------------")
