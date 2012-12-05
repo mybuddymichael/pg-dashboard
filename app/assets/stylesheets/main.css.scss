@@ -25,6 +25,7 @@ $max-width: 480;
   @include padding(4, 0, 2, 0, $max-width);
 
   background-color: $grey;
+  box-shadow: $transparent-grey 0px 2px 0px;
 
   text-align: center;
 }
