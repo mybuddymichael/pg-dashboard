@@ -13,10 +13,14 @@ class DashboardController < ApplicationController
       if icp.last_connect_time < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
         messages.push("Last connection was at #{icp.last_connect_time}")
-      elsif icp.last_sync_time < (now - (60 * icp.sync_interval))
+      end
+
+      if icp.last_sync_time < (now - (60 * icp.sync_interval))
         status = :bad
         messages.push("Last sync was at #{icp.last_sync_time}")
-      elsif icp.last_parse_time < (now - (2 * 60 * icp.sync_interval))
+      end
+
+      if icp.last_parse_time < (now - (2 * 60 * icp.sync_interval))
         status = :bad
         messages.push("Last parse was at #{icp.last_parse_time}")
       end
