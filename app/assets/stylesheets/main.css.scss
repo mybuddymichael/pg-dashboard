@@ -35,3 +35,20 @@ $max-width: 480;
   max-width: $max-width;
   margin: 21px 0 10px 0;
 }
+
+.icp-card {
+  &.good {
+    background-color: $light-blue;
+    box-shadow: $dark-light-blue 0 2px 0;
+  }
+
+  &.bad {
+    background-color: $orange;
+    box-shadow: $dark-orange 0 2px 0;
+  }
+
+  &.ignored {
+    background: $grey;
+    box-shadow: $dark-grey 0 2px 0;
+  }
+}
