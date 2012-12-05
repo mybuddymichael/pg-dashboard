@@ -28,17 +28,17 @@
     padding-bottom: 30px;
   }
   .blue {
-    background: #2090ae;
+    background: $light-blue;
     box-shadow: #15708c 0px 6px 0px;
   }
   .blue:hover { background: #15708c; }
   .orange {
-    background: #b35536;
+    background: $orange;
     box-shadow: #8c422a 0px 6px 0px;
   }
   .orange:hover { background: #8c422a; }
   .grey{
-    background: #55606e;
+    background: $grey;
     box-shadow: #485463 0px 6px 0px;
   }
 }
