@@ -51,4 +51,8 @@ header {
     background: $grey;
     box-shadow: $dark-grey 0 2px 0;
   }
+
+  .messages {
+    @include font-size(10);
+  }
 }
