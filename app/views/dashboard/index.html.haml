@@ -6,9 +6,9 @@
     - @all_icps.each do |icp|
       %div{class: "icp-card #{icp["status"]}"}
         .icp-title
-          =icp["name"]
-          =icp["status"]
-        - if icp["status"] == "orange"
+          =icp[:name]
+          =icp[:status]
+        - if icp[:status] == "orange"
           .icp-status-indicator ✘
         - else
           .icp-status-indicator ✔
