@@ -40,21 +40,6 @@ header {
 
   @include font-size(28);
 
-  &.good {
-    background-color: $light-blue;
-    border-bottom: 2px solid $dark-light-blue;
-  }
-
-  &.bad {
-    background-color: $orange;
-    border-bottom: 2px solid $dark-orange;
-  }
-
-  &.ignored {
-    background: $grey;
-    border-bottom: 2px solid $dark-grey;
-  }
-
   .name {
     display: inline;
   }
@@ -80,4 +65,20 @@ header {
       padding: 0;
     }
   }
+
+  &.good {
+    background-color: $light-blue;
+    border-bottom: 2px solid $dark-light-blue;
+  }
+
+  &.bad {
+    background-color: $orange;
+    border-bottom: 2px solid $dark-orange;
+  }
+
+  &.ignored {
+    background: $grey;
+    border-bottom: 2px solid $dark-grey;
+  }
+
 }
