@@ -101,3 +101,8 @@ header {
     border-bottom: 2px solid $dark-grey;
   }
 }
+
+$max-width: 568;
+
+@media screen and (min-width: 321px) {
+}
