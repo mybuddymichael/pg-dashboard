@@ -59,7 +59,7 @@ header {
   }
 
   .message {
-    @include padding(0, 0, 2, 0, $max-width);
+    @include padding(0, 0, 4, 0, $max-width);
 
     &:last-of-type {
       padding: 0;
