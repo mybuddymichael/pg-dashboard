@@ -53,7 +53,7 @@ header {
   }
 
   .messages {
-    @include margin(6, 0, 0, 0, $max-width);
+    @include margin(7, 0, 0, 0, $max-width);
     @include font-size(12);
     font-weight: normal;
   }
