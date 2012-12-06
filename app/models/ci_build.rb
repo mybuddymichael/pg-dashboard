@@ -13,10 +13,7 @@ class CiBuild
     response = HTTParty.get(url, OPTIONS_HASH)
     build_hash = ActiveSupport::JSON.decode(response.body)
 
-    new(build_hash["number"],
-        build_hash["result"],
-        build_hash["actions"][4]["failCount"],
-        build_hash["actions"][4]["totalCount"])
+    new(build_hash["number"], build_hash["result"])
   end
 
   # Public: Returns a Fixnum of the build's number.
@@ -25,11 +22,9 @@ class CiBuild
   # Public: Returns a String of the build's result.
   attr_reader :result
 
-  def initialize(number, result, failed_tests, total_tests)
+  def initialize(number, result)
     @number = number
     @result = result
-    @failed_tests = failed_tests
-    @total_tests = total_tests
   end
 
 end
