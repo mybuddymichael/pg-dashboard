@@ -69,6 +69,10 @@ header {
   &.good {
     background-color: $light-blue;
     border-bottom: 2px solid $dark-light-blue;
+
+    .status-indicator {
+      margin-top: -9px;
+    }
   }
 
   &.bad {
