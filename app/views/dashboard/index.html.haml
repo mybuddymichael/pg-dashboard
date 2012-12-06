@@ -5,7 +5,7 @@
 
   %section.icps
     - @all_icps.each do |icp|
-      %div{class: "icp-card #{icp[:status]}"}
+      %div{class: "icp-card #{icp[:status]}", id: "#{icp[:name]}"}
         .name
           =icp[:name]
         - if icp[:status] == :good

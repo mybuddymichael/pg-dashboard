@@ -19,11 +19,10 @@ class utils.AutoRefresher
     @$timer = $("#timer")
     @start_timer()
 
-
   start_timer: ->
-    # @refresh_interval = setInterval(_this.update_data, 5000)
+    @refresh_interval = setInterval(@update_data, 5000)
 
-  update_data: ->
+  update_data: =>
     _this = this
 
     $.ajax
@@ -31,10 +30,22 @@ class utils.AutoRefresher
       dataType: "json"
       url: "/dashboard"
       success: (data) ->
-        # update_icps(data["all_icps"])
-
+        _this.update_icps(data["all_icps"])
 
   update_icps: (icps) ->
     for icp in icps
-      alert icp
+      @$icp = $('#'+icp.name)
+      @message = ''
+      for message in icp.messages
+        @message += message
+      if icp.status == 'good'
+        @$icp.addClass('good')
+        @$icp.removeClass('bad')
+        $('#'+icp.name+' > .messages').html('')
+      else
+        @$icp.addClass('bad')
+        @$icp.removeClass('good')
+        $('#'+icp.name+' > .messages').html(@message)
+
+
 
