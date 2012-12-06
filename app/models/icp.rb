@@ -35,4 +35,15 @@ class Icp < ActiveRecord::Base
   #
   # Returns nil or an IcpMetadata object.
   has_one :icp_metadata
+
+  private
+
+  # Internal: Convert a timestamp to the provided timezone without
+  # changing the time.
+  #
+  # Returns a DateTime object in UTC +0.
+  def convert_to_timezone_without_changing_time(time, timezone)
+    offset = ActiveSupport::TimeZone.new(timezone).utc_offset / 3600
+    time.to_datetime.change(offset: "#{offset}")
+  end
 end
