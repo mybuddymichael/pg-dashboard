@@ -20,7 +20,7 @@ class DashboardController < ApplicationController
 
   def get_all_icps
     now = Time.now.utc
-    Icp.all(:order => :icp_name).collect do |icp|
+    @icps = Icp.all.collect do |icp|
       status = :good
       messages = []
 
@@ -54,6 +54,9 @@ class DashboardController < ApplicationController
         status: status,
         messages: messages }
     end
+
+    # @icps.sort! { |a,b| a[:status] <=> b[:status] }
+    @icps.sort_by { |icp| [icp[:status], icp[:name]]}
   end
 
   def get_all_ci_projects
