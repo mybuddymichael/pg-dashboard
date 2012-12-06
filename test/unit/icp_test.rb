@@ -28,7 +28,18 @@
 require 'test_helper'
 
 class IcpTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'last_sync_time returns the correct time but in UTC -8' do
+    assert_equal(DateTime.new(2012, 12, 05, 20, 40, 43, '-8'),
+                 Icp.find(1).last_sync_time)
+  end
+
+  test 'last_parse_time returns the correct time but in UTC -8' do
+    assert_equal(DateTime.new(2012, 12, 05, 20, 28, 19, '-8'),
+                 Icp.find(1).last_parse_time)
+  end
+
+  test 'last_connect_time returns the correct time but in UTC -8' do
+    assert_equal(DateTime.new(2012, 12, 05, 20, 41, 06, '-8'),
+                 Icp.find(1).last_connect_time)
+  end
 end
