@@ -78,9 +78,9 @@ section .header {
   .status-indicator {
     display: inline;
     float: right;
-    margin-top: -7px;
+    margin-top: -6px;
 
-    @include font-size(34);
+    @include font-size(32);
   }
 
   .messages {
@@ -102,7 +102,7 @@ section .header {
     border-bottom: 2px solid $dark-light-blue;
 
     .status-indicator {
-      margin-top: -6px;
+      margin-top: -5px;
     }
   }
 
