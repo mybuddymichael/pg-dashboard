@@ -36,6 +36,17 @@ class Icp < ActiveRecord::Base
   # Returns nil or an IcpMetadata object.
   has_one :icp_metadata
 
+  # Public: Get one of the class's time properties with the correct time
+  # but also including the timezone.
+  #
+  # Returns a DateTime object.
+  [:last_sync_time, :last_parse_time, :last_connect_time].each do |attribute|
+    define_method(attribute) do
+      convert_to_timezone_without_changing_time(read_attribute(attribute),
+                                                read_attribute(:timezone))
+    end
+  end
+
   private
 
   # Internal: Convert a timestamp to the provided timezone without
