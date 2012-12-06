@@ -9,7 +9,6 @@ class DashboardController < ApplicationController
     @all_icps = get_all_icps
     @ci_projects = get_all_ci_projects
 
-    logger.info(@all_icps[0])
     respond_to do |format|
       format.html
       format.json { render :json => { all_icps: @all_icps,

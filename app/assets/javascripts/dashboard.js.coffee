@@ -31,7 +31,7 @@ class utils.AutoRefresher
       @$icp = $('#'+icp.name)
       @message = ''
       for message in icp.messages
-        @message += message
+        @message += '<div class="message">' + message + '</div>'
       if icp.status == 'good'
         @$icp.addClass('good')
         @$icp.removeClass('bad')
