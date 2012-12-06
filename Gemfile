@@ -20,7 +20,6 @@ group :development, :test do
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-test'
-  gem 'guard-coffeescript'
 
   gem 'pry-rails'
 end
