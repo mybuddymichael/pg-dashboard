@@ -1,7 +1,6 @@
 root = this
 $ = root.jQuery
 
-
 Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
@@ -41,6 +40,3 @@ class utils.AutoRefresher
         @$icp.addClass('bad')
         @$icp.removeClass('good')
         $('#'+icp.name+' > .messages').html(@message)
-
-
-
