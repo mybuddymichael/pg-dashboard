@@ -20,7 +20,7 @@ class DashboardController < ApplicationController
 
   def get_all_icps
     now = Time.now.utc
-    Icp.find(:all).collect do |icp|
+    Icp.all(:order => :icp_name).collect do |icp|
       status = :good
       messages = []
 
