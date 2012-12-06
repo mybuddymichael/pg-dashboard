@@ -33,6 +33,14 @@ $transparent-grey: transparentize($grey, 0.7);
   }
 }
 
+@mixin linear-gradient($starting-point, $start-color, $end-color) {
+  background: -webkit-linear-gradient($starting-point, $start-color, $end-color);
+  background: -moz-linear-gradient($starting-point, $start-color, $end-color);
+  background: -ms-linear-gradient($starting-point, $start-color, $end-color);
+  background: -o-linear-gradient($starting-point, $start-color, $end-color);
+  background: linear-gradient($starting-point, $start-color, $end-color);
+}
+
 @mixin link($px: 2, $style: solid, $color: $dark-blue) {
   text-decoration: none;
   border-bottom: $px*1px $style $color;
