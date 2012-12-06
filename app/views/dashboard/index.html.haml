@@ -17,11 +17,12 @@
             - icp[:messages].each do |message|
               .message= message
 
-  -# %section.ci-projects
-  -#   - @ci_projects.each do |project|
-  -#     %div{class: "ci-project-card #{project[:last_build_result]}"}
-  -#       .name= project[:name]
-  -#       - if project[:last_build_result] == "good"
-  -#         .status-indicator ✔
-  -#       - else
-  -#         .status-indicator ✘
+  %section.ci-projects
+    .header Jenkins projects
+    - @ci_projects.each do |project|
+      %div{class: "card #{project[:last_build_result]}"}
+        .name= project[:name]
+        - if project[:last_build_result] == :good
+          .status-indicator ✔
+        - else
+          .status-indicator ✘
