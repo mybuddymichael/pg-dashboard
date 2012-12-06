@@ -57,7 +57,7 @@ header {
   @include font-size(28);
 
   .name {
-    display: inline;
+    display: inline-block;
   }
 
   .status-indicator {
