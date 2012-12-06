@@ -51,7 +51,7 @@ header {
   margin: 23px 0 0 0;
 }
 
-.icp-card {
+.card {
   @include padding(20, 18, 18, 16, $max-width);
 
   @include font-size(28);
@@ -105,7 +105,7 @@ header {
 $max-width: 568;
 
 @media screen and (min-width: 321px) {
-  .icp-card {
+  .card {
     @include font-size(42);
 
     @include padding(20, 18, 18, 16, $max-width);
