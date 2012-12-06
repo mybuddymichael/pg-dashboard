@@ -4,7 +4,7 @@ module ApplicationHelper
     if @title.nil?
       base_title
     else
-      "#{@title} - #{base_title}"
+      "ProGauge - #{@title}"
     end
   end
 end
