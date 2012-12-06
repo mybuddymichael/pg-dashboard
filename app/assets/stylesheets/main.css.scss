@@ -51,6 +51,13 @@ header {
   margin: 23px 0 0 0;
 }
 
+section .header {
+  @include padding(10, 18, 10, 16, $max-width);
+
+  color: $grey;
+  @include font-size(18);
+}
+
 .card {
   @include padding(20, 18, 18, 16, $max-width);
 
