@@ -19,7 +19,7 @@
     .header Jenkins projects
     - @ci_projects.each do |project|
       %div{class: "card #{project[:last_build_result]}"}
-        .name= project[:name]
+        .name= link_to(project[:name], project[:last_build_url])
         - if project[:last_build_result] == :good
           .status-indicator ✔
         - else

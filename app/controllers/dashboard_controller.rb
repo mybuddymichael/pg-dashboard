@@ -61,8 +61,8 @@ class DashboardController < ApplicationController
       result = (project.last_build.result == "SUCCESS") ? :good : :bad
 
       { name: project.name,
-        url: project.url,
-        last_build_result: result }
+        last_build_result: result,
+        last_build_url: project.last_build.url }
     end
   end
 
