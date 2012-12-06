@@ -4,7 +4,7 @@ $ = root.jQuery
 Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
-$(document).ready ->
+$ ->
   new Dashboard.utils.AutoRefresher()
 
 class utils.AutoRefresher
