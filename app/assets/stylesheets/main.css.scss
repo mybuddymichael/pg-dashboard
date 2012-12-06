@@ -105,4 +105,36 @@ header {
 $max-width: 568;
 
 @media screen and (min-width: 321px) {
+  .icp-card {
+    @include font-size(42);
+
+    @include padding(20, 18, 18, 16, $max-width);
+
+    .name {
+      overflow: hidden;
+      height: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .status-indicator {
+      @include font-size(52);
+    }
+
+    .messages {
+      @include font-size(16);
+    }
+
+    &.good {
+      .status-indicator {
+        margin-top: -13px;
+      }
+    }
+
+    &.bad {
+      .status-indicator {
+        margin-top: -12px;
+      }
+    }
+  }
 }
