@@ -28,6 +28,22 @@ header {
 
   @include font-size(14);
   text-align: center;
+
+  &.pulse {
+    @include animation(header-text-pulse, 1.5);
+  }
+}
+
+@include keyframes(header-text-pulse) {
+  from {
+    color: $dark-blue;
+  }
+  50% {
+    color: $grey;
+  }
+  to {
+    color: $dark-blue;
+  }
 }
 
 .content {
