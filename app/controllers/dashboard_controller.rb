@@ -69,16 +69,4 @@ class DashboardController < ApplicationController
     end
   end
 
-  # Internal: Convert an ActiveSupport::TimeWithZone object to the
-  # timezone provided in the "timezone" String, without changing the
-  # time itself.
-  #
-  # Returns a DateTime object.
-  def convert_timezone_without_changing_time(time, timezone)
-    tz = TZInfo::Timezone.get(timezone).current_period.utc_total_offset
-    tz = tz / 3600
-    converted_time = time.to_datetime.change(offset: "#{tz}")
-
-    converted_time.utc
-  end
 end
