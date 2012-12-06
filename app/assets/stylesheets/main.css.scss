@@ -13,6 +13,18 @@ a {
   color: $dark-blue;
 }
 
+@include keyframes(header-text-pulse) {
+  from {
+    color: $dark-blue;
+  }
+  50% {
+    color: $grey;
+  }
+  to {
+    color: $dark-blue;
+  }
+}
+
 // Mobile-first: starting with styles up to 320px wide...
 $max-width: 320;
 
@@ -31,18 +43,6 @@ header {
 
   &.pulse {
     @include animation(header-text-pulse, 1.5);
-  }
-}
-
-@include keyframes(header-text-pulse) {
-  from {
-    color: $dark-blue;
-  }
-  50% {
-    color: $grey;
-  }
-  to {
-    color: $dark-blue;
   }
 }
 
