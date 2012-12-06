@@ -36,7 +36,7 @@ header {
 }
 
 .icp-card {
-  @include padding(16, 18, 14, 16, $max-width);
+  @include padding(20, 18, 18, 16, $max-width);
 
   @include font-size(28);
 
