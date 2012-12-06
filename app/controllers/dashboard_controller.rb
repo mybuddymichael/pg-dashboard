@@ -24,12 +24,9 @@ class DashboardController < ApplicationController
       status = :good
       messages = []
 
-      last_connect = convert_timezone_without_changing_time(icp.last_connect_time,
-                                                            icp.timezone)
-      last_sync = convert_timezone_without_changing_time(icp.last_sync_time,
-                                                         icp.timezone)
-      last_parse = convert_timezone_without_changing_time(icp.last_parse_time,
-                                                          icp.timezone)
+      last_connect = icp.last_connect_time
+      last_sync = icp.last_sync_time
+      last_parse = icp.last_parse_time
 
       if last_connect < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
