@@ -31,5 +31,8 @@ class Icp < ActiveRecord::Base
     self.table_name = "icp_master"
   end
 
+  # Public: Get the IcpMetadata object belonging to an ICP.
+  #
+  # Returns nil or an IcpMetadata object.
   has_one :icp_metadata
 end
