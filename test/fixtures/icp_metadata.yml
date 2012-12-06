@@ -12,7 +12,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  enabled?: false
-
-two:
-  enabled?: false
+  icp_id: 1
