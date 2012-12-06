@@ -11,7 +11,8 @@ class DashboardController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => { all_icps: @all_icps, all_ci_projects: @ci_projects}}
+      format.json { render :json => { all_icps: @all_icps,
+                                      all_ci_projects: @ci_projects}}
     end
   end
 
@@ -23,9 +24,12 @@ class DashboardController < ApplicationController
       status = :good
       messages = []
 
-      last_connect = convert_timezone_without_changing_time(icp.last_connect_time, icp.timezone)
-      last_sync = convert_timezone_without_changing_time(icp.last_sync_time, icp.timezone)
-      last_parse = convert_timezone_without_changing_time(icp.last_parse_time, icp.timezone)
+      last_connect = convert_timezone_without_changing_time(icp.last_connect_time,
+                                                            icp.timezone)
+      last_sync = convert_timezone_without_changing_time(icp.last_sync_time,
+                                                         icp.timezone)
+      last_parse = convert_timezone_without_changing_time(icp.last_parse_time,
+                                                          icp.timezone)
 
       if last_connect < (now - ICP_CONNECTION_THRESHOLD_IN_SECONDS)
         status = :bad
