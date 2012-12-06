@@ -9,9 +9,9 @@
         .name
           =icp[:name]
         - if icp[:status] == :good
-          .status-indicator ✔
+          .status-indicator &#x2714;
         - else
-          .status-indicator ✘
+          .status-indicator &#x2718;
         - if !icp[:messages].empty?
           .messages
             - icp[:messages].each do |message|
