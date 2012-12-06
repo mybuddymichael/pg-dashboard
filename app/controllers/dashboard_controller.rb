@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
     @all_icps = get_all_icps
     @ci_projects = get_all_ci_projects
 
+    logger.info(@all_icps[0])
     respond_to do |format|
       format.html
       format.json { render :json => { all_icps: @all_icps,
@@ -44,6 +45,10 @@ class DashboardController < ApplicationController
       if last_parse < (now - (2 * 60 * icp.sync_interval))
         status = :bad
         messages.push("Last parse was #{time_ago_in_words(last_parse)} ago")
+      end
+
+      if !icp.icp_metadata.enabled?
+        status = :ignored
       end
 
       { name: icp.icp_name,
