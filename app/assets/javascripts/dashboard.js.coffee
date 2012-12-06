@@ -20,11 +20,14 @@ class utils.AutoRefresher
     _this = this
 
     $.ajax
-      beforeSend: null
+      beforeSend: ->
+        $("header").addClass('pulse')
       dataType: "json"
       url: "/dashboard"
       success: (data) ->
         _this.update_icps(data["all_icps"])
+      complete: ->
+        $("header").removeClass('pulse')
 
   update_icps: (icps) ->
     for icp in icps
