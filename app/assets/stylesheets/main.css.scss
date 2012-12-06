@@ -65,6 +65,10 @@ section .header {
 
   .name {
     display: inline-block;
+    overflow: hidden;
+    width: 86%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .status-indicator {
@@ -117,12 +121,6 @@ $max-width: 568;
 
     @include padding(20, 18, 18, 16, $max-width);
 
-    .name {
-      overflow: hidden;
-      height: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
 
     .status-indicator {
       @include font-size(52);
