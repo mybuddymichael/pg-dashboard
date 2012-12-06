@@ -1,11 +1,22 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+optimus:
+  id: 1
+  company_id: 2
+  field_name: Some field
+  lease_name: Some lease
+  area_name: Some area
+  icp_name: Optimus
+  schema_name: rand_client_schema
+  prime_schema_name: rand_pdms
+  sync_interval: 20
+  sync_appointment_window: 5
+  last_sync_time: 2012-12-05 20:40:43
+  last_parse_time: 2012-12-05 20:28:19
+  last_connect_time: 2012-12-05 20:41:06
+  ip_address: 10.0.1.1
+  tunnel_port: 7777
+  mac_address: 00:30:18:ab:75:1a
+  username: randuser
+  password: randpass
+  bios_password: randbiospass
+  deployed: true
+  timezone: America/Los_Angeles
