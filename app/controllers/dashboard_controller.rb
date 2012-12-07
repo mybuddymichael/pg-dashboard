@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  before_filter :signed_in_user
+
   include ActionView::Helpers::DateHelper
 
   ICP_CONNECTION_THRESHOLD_IN_SECONDS = 300
