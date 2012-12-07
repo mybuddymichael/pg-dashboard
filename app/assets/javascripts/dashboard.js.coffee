@@ -5,7 +5,7 @@ Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
 $ ->
-  # new Dashboard.utils.AutoRefresher()
+  new Dashboard.utils.AutoRefresher()
 
 class utils.AutoRefresher
   constructor: ->
@@ -22,10 +22,10 @@ class utils.AutoRefresher
     if @refresh_time_in_sec > 1
       @refresh_time_in_sec -= 1
       if @refresh_time_in_sec == 1
-        $("header").text("refreshing in " +
+        $(".refresh_div").text("refreshing in " +
           @refresh_time_in_sec + " second...")
       else
-        $("header").text("refreshing in " +
+        $(".refresh_div").text("refreshing in " +
           @refresh_time_in_sec + " seconds...")
 
     else
@@ -39,15 +39,15 @@ class utils.AutoRefresher
 
     $.ajax
       beforeSend: ->
-        $("header").text('refeshing')
-        $("header").addClass('pulse')
+        $(".refresh_div").text('refeshing')
+        $(".refresh_div").addClass('pulse')
       dataType: "json"
       url: "/dashboard"
       success: (data) ->
         _this.update_icps(data["all_icps"])
       complete: ->
-        $("header").removeClass('pulse')
-        $("header").text("refreshing in " + _this.refresh_time_in_sec + " seconds")
+        $(".refresh_div").removeClass('pulse')
+        $(".refresh_div").text("refreshing in " + _this.refresh_time_in_sec + " seconds")
         _this.start_timer()
 
   update_icps: (icps) ->

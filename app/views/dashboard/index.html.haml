@@ -1,7 +1,7 @@
 %header
   - if signed_in?
-    %div= link_to "sign out", signout_path, :method => :delete
-    refreshing in 10 seconds...
+    .sign_out_link= link_to "sign out", signout_path, :method => :delete
+    .refresh_div refreshing in 10 seconds...
 
 .content
 

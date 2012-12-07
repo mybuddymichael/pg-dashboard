@@ -39,9 +39,18 @@ header {
   @include font-size(14);
   text-align: center;
 
-  &.pulse {
-    @include animation(header-text-pulse, 1.5);
+  .sign_out_link {
+    float: left;
+    padding-left: 20px;
   }
+  .refresh_div {
+    float: right;
+    margin-right: 20px;
+  }
+
+}
+.pulse {
+  @include animation(header-text-pulse, 1.5);
 }
 
 .content {
