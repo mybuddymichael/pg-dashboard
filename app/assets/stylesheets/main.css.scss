@@ -135,34 +135,3 @@ section .header {
     border-bottom: 2px solid $dark-grey;
   }
 }
-
-$max-width: 568;
-
-@media screen and (min-width: 321px) {
-  .card {
-    @include font-size(42);
-
-    @include padding(20, 18, 18, 16, $max-width);
-
-
-    .status-indicator {
-      @include font-size(52);
-    }
-
-    .messages {
-      @include font-size(16);
-    }
-
-    &.good {
-      .status-indicator {
-        margin-top: -13px;
-      }
-    }
-
-    &.bad {
-      .status-indicator {
-        margin-top: -12px;
-      }
-    }
-  }
-}
