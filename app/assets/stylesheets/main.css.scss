@@ -110,7 +110,7 @@ section .header {
     font-weight: normal;
 
     @include respond-to(small-small) {
-      @include font-size(16);
+      @include font-size(20);
     }
   }
 
