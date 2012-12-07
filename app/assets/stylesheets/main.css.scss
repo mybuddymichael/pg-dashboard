@@ -74,8 +74,14 @@ section .header {
   @include font-size(28);
 
   @include respond-to(small-small) {
+    width: 90%;
+    @include margin(10, 0, 0, 0, $max-width);
+    margin-left: auto;
+    margin-right: auto;
     @include padding(20, 18, 18, 16, $max-width);
-    @include font-size(42);
+
+    border-radius: 6px;
+    @include font-size(32);
   }
 
   .name {
