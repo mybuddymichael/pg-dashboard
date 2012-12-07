@@ -15,30 +15,34 @@ $max-width: 320;
 @mixin respond-to($break-point) {
   @if $break-point == small-small {
     $max-width: $break-small-medium;
-    @media screen and (min-width: $break-small-small) { @content; }
+    @media screen and (min-width: $break-small-small * 1px) { @content; }
   }
   @else if $break-point == small-medium {
     $max-width: $break-small-large;
-    @media screen and (min-width: $break-small-medium) { @content; }
+    @media screen and (min-width: $break-small-medium * 1px) { @content; }
   }
   @else if $break-point == small-large {
     $max-width: $break-medium-small;
-    @media screen and (min-width: $break-small-large) { @content; }
+    @media screen and (min-width: $break-small-large * 1px) { @content; }
   }
   @else if $break-point == medium-small {
     $max-width: $break-medium-medium;
-    @media screen and (min-width: $break-medium-small) { @content; }
+    @media screen and (min-width: $break-medium-small * 1px) { @content; }
   }
   @else if $break-point == medium-medium {
     $max-width: $break-medium-large;
-    @media screen and (min-width: $break-medium-medium) { @content; }
+    @media screen and (min-width: $break-medium-medium * 1px) { @content; }
   }
   @else if $break-point == medium-large {
     $max-width: $break-medium-large;
-    @media screen and (min-width: $break-medium-large) { @content; }
+    @media screen and (min-width: $break-medium-large * 1px) { @content; }
   }
 }
 
+
+// =====================================================================
+// Colors
+// =====================================================================
 
 $dark-blue: #27313e;
 
