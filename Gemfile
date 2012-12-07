@@ -11,8 +11,10 @@ gem 'sqlite3'
 gem 'haml'
 gem 'httparty'
 gem 'grit'
-gem 'tzinfo'
 
+group :test do
+  gem 'ruby-prof'
+end
 
 group :development, :test do
   # gem 'annotate', '2.5.0'
