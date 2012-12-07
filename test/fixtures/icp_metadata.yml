@@ -13,3 +13,7 @@
 
 one:
   icp_id: 1
+  enabled: true
+  check_connection: true
+  check_parsing: true
+  check_syncing: true

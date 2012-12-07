@@ -1,0 +1,36 @@
+test_user:
+  userID: 1
+  companyID: 1
+  username: 'testuser'
+  password: 'ea9504a63c673ab78b6d8584607d9e8b8d52264b'  # foobar
+  firstName: 'test'
+  lastName: 'user'
+  email: 'tuser@foobar.com'
+  phone: '661-987-6543'
+  title: 'Super Rad Dude'
+  role: 'Administrator'
+  enabled: true
+  verified: true
+  emailVerified: true
+  licenseVersion: 1
+  licenseDate: '2012-01-01'
+  expirationDate: nil
+
+other_company_user:
+  userID: 2
+  companyID: 2
+  username: 'otheruser'
+  password: '677b12b8d869990dc49bb3a1bae23ca25d541ab7'
+  firstName: 'test'
+  lastName: 'user'
+  email: 'tuser@foobar.com'
+  phone: '661-987-6543'
+  title: 'Super Rad Dude'
+  role: 'Administrator'
+  enabled: true
+  verified: true
+  emailVerified: true
+  licenseVersion: 1
+  licenseDate: '2012-01-01'
+  expirationDate: '2012-09-01'
+
