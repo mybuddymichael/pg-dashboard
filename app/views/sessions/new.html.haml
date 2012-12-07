@@ -1,0 +1,15 @@
+%header
+  sign in
+  - flash.each do |key,value|
+    %div{class: "alert alert-#{key}"}
+      = value
+
+.content
+  = form_for :session, :url => sessions_path do |f|
+    = f.label :username
+    = f.text_field :username
+
+    = f.label :password
+    = f.password_field :password
+
+    = f.submit "sign in"
