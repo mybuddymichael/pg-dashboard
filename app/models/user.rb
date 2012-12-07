@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   def authenticate_signin (password)
     @user = User.find_by_password(
       Digest::SHA1.hexdigest(password + self.username))
-    if @user
+    if @user && (@user.companyID == 1)
       return true
     else
       return false
