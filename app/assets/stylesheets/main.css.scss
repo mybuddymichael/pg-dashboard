@@ -6,7 +6,7 @@ body {
 
   color: $dark-blue;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 100%;
   font-weight: bold;
 }
 
@@ -47,6 +47,10 @@ header {
 .content {
   max-width: $max-width;
   margin: 23px 0 0 0;
+
+  @include respond-to(small-small) {
+    margin: 36px 0 0 0;
+  }
 }
 
 section .header {
@@ -56,18 +60,25 @@ section .header {
   @include font-size(18);
 
   @include respond-to(small-small) {
+    @include padding(24, 18, 6, 24, $max-width);
     @include font-size(24);
   }
 }
 
 .card {
-  @include padding(20, 18, 18, 16, $max-width);
+  @include padding(22, 18, 22, 16, $max-width);
 
   @include font-size(28);
 
   @include respond-to(small-small) {
+    width: 90%;
+    @include margin(10, 0, 0, 0, $max-width);
+    margin-left: auto;
+    margin-right: auto;
     @include padding(20, 18, 18, 16, $max-width);
-    @include font-size(42);
+
+    border-radius: 6px;
+    @include font-size(32);
   }
 
   .name {
@@ -86,23 +97,22 @@ section .header {
     @include font-size(32);
 
     @include respond-to(small-small) {
-      @include font-size(48);
       margin-top: -4px;
     }
   }
 
   .messages {
-    @include margin(7, 0, 0, 0, $max-width);
-    @include font-size(12);
+    @include margin(16, 0, 0, 0, $max-width);
+    @include font-size(16);
     font-weight: normal;
 
     @include respond-to(small-small) {
-      @include font-size(16);
+      @include font-size(20);
     }
   }
 
   .message {
-    @include padding(0, 0, 4, 0, $max-width);
+    @include padding(0, 0, 8, 0, $max-width);
 
     &:last-of-type {
       padding: 0;
@@ -115,10 +125,6 @@ section .header {
 
     .status-indicator {
       margin-top: -5px;
-
-      @include respond-to(small-small) {
-        @include font-size(46);
-      }
     }
   }
 
