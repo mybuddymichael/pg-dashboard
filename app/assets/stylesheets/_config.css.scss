@@ -44,6 +44,7 @@ $dark-blue: #27313e;
 
 $light-blue: #14a5cc;
 $dark-light-blue: darken($light-blue, 22%);
+$medium-dark-light-blue: darken($light-blue, 10%);
 $transparent-light-blue: transparentize($light-blue, 0.7);
 
 $orange: #d65f38;
