@@ -128,10 +128,6 @@ section .header {
 
     .status-indicator {
       margin-top: -5px;
-
-      @include respond-to(small-small) {
-        @include font-size(46);
-      }
     }
   }
 
