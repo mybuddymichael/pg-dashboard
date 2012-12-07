@@ -68,7 +68,7 @@ section .header {
 }
 
 .card {
-  @include padding(20, 18, 18, 16, $max-width);
+  @include padding(22, 18, 22, 16, $max-width);
 
   @include font-size(28);
 
