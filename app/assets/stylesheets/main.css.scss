@@ -29,9 +29,6 @@ a {
   }
 }
 
-// Mobile-first: starting with styles up to 320px wide...
-$max-width: 320;
-
 header {
   position: fixed;
   top: 0;
@@ -60,12 +57,21 @@ section .header {
 
   color: $grey;
   @include font-size(18);
+
+  @include respond-to(small-small) {
+    @include font-size(24);
+  }
 }
 
 .card {
   @include padding(20, 18, 18, 16, $max-width);
 
   @include font-size(28);
+
+  @include respond-to(small-small) {
+    @include padding(20, 18, 18, 16, $max-width);
+    @include font-size(42);
+  }
 
   .name {
     display: inline-block;
@@ -81,12 +87,21 @@ section .header {
     margin-top: -6px;
 
     @include font-size(32);
+
+    @include respond-to(small-small) {
+      @include font-size(48);
+      margin-top: -4px;
+    }
   }
 
   .messages {
     @include margin(7, 0, 0, 0, $max-width);
     @include font-size(12);
     font-weight: normal;
+
+    @include respond-to(small-small) {
+      @include font-size(16);
+    }
   }
 
   .message {
@@ -103,6 +118,10 @@ section .header {
 
     .status-indicator {
       margin-top: -5px;
+
+      @include respond-to(small-small) {
+        @include font-size(46);
+      }
     }
   }
 
@@ -114,36 +133,5 @@ section .header {
   &.ignored {
     background: $grey;
     border-bottom: 2px solid $dark-grey;
-  }
-}
-
-$max-width: 568;
-
-@media screen and (min-width: 321px) {
-  .card {
-    @include font-size(42);
-
-    @include padding(20, 18, 18, 16, $max-width);
-
-
-    .status-indicator {
-      @include font-size(52);
-    }
-
-    .messages {
-      @include font-size(16);
-    }
-
-    &.good {
-      .status-indicator {
-        margin-top: -13px;
-      }
-    }
-
-    &.bad {
-      .status-indicator {
-        margin-top: -12px;
-      }
-    }
   }
 }
