@@ -1,4 +1,8 @@
-%header refreshing in 10 seconds...
+%header
+  - if signed_in?
+    %div= link_to "sign out", signout_path, :method => :delete
+    refreshing in 10 seconds...
+
 .content
 
   %section.icps
