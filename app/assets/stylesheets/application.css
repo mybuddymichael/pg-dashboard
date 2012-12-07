@@ -11,4 +11,5 @@
  *= require normalize
  *= require_self
  *= require main
+ *= require sessions
  */
