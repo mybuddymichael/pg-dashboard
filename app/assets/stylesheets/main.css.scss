@@ -63,6 +63,7 @@ section .header {
   @include font-size(18);
 
   @include respond-to(small-small) {
+    @include padding(24, 18, 6, 24, $max-width);
     @include font-size(24);
   }
 }
