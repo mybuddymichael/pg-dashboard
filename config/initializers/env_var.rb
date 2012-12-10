@@ -1,4 +1,4 @@
-Rails.application.config.before_initialize do
+Rails.application.config.before_configuration do
   module EnvVar
     DATABASE_USERNAME = ENV["dashboard_database_username"]
     DATABASE_PASSWORD = ENV["dashboard_database_password"]
