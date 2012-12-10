@@ -10,18 +10,9 @@ class CiProject
   #
   # Returns an Array of CiProjects.
   def self.all
-    list_of_projects = list
-
-    all_ci_projects = list_of_projects.collect do |project|
-      project_response = HTTParty.get(project["url"] + API_SUFFIX, OPTIONS_HASH)
-      project_hash = ActiveSupport::JSON.decode(project_response.body)
-      new(project_hash["name"],
-          project_hash["url"],
-          project_hash["lastBuild"]["number"],
-          project_hash["lastBuild"]["url"])
+    list.collect do |project|
+      find_by_name(project['name'])
     end
-
-    all_ci_projects
   end
 
   # Public: Find a single CiProject by name.
