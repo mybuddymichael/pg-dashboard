@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   include ActionView::Helpers::DateHelper
 
-  ICP_CONNECTION_THRESHOLD_IN_SECONDS = 300
+  ICP_CONNECTION_THRESHOLD_IN_SECONDS = 1800
 
   def index
     @title = "ICP"
