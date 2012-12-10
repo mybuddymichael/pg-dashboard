@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: line-through;
+  text-decoration: underline;
 }
 
 @include keyframes(header-text-pulse) {
