@@ -6,6 +6,12 @@ utils = Dashboard.utils = {}
 
 $(document).ready ->
   new Dashboard.utils.AutoRefresher()
+  @clock = setInterval(clock_count, 1000)
+
+clock_count = ->
+  @time = new Date()
+  @st = @time.toString()
+  $('.clock').html(@st)
 
 class utils.AutoRefresher
   constructor: ->
