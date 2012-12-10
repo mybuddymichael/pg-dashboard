@@ -55,6 +55,7 @@ class CiProject
   #
   # Returns a Hash.
   def self.fetch_project_hash_by_name(name)
+    Rails.logger.info(BASE_URL + "job/" + name + API_SUFFIX)
     response = HTTParty.get(BASE_URL + "job/" + name + API_SUFFIX, OPTIONS_HASH)
     ActiveSupport::JSON.decode(response.body)
   end
