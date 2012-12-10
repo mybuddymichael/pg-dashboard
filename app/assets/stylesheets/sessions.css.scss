@@ -23,9 +23,10 @@
     @include font-size(40);
     background: $light-blue;
     width: 100%;
-  }
-  input[type='submit']:hover{
-    background: $medium-dark-light-blue;
+
+    &:hover{
+      background: $medium-dark-light-blue;
+    }
   }
 
   .flash_box {
