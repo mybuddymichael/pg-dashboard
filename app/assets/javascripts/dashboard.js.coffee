@@ -4,7 +4,7 @@ $ = root.jQuery
 Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
-$ ->
+$(document).ready ->
   new Dashboard.utils.AutoRefresher()
 
 class utils.AutoRefresher
@@ -51,16 +51,19 @@ class utils.AutoRefresher
         _this.start_timer()
 
   update_icps: (icps) ->
-    for icp in icps
-      @$icp = $('#'+icp.name)
-      @message = ''
-      for message in icp.messages
-        @message += '<div class="message">' + message + '</div>'
-      if icp.status == 'good'
-        @$icp.addClass('good')
-        @$icp.removeClass('bad')
-        $('#'+icp.name+' > .messages').html('')
+    icp_size = $('.icp').size()
+    for i in [0..(icp_size-1)] by 1
+      @card_html = ''
+      @card_html += "<div class='name'>" + icps[i].name + "</div>"
+      if icps[i].status == 'good'
+        @card_html += "<div class='status-indicator'>&#x2714;</div>"
+        $('.icp')[i].setAttribute('class', 'icp card good')
+        $('.icp')[i].innerHTML = @card_html
       else
-        @$icp.addClass('bad')
-        @$icp.removeClass('good')
-        $('#'+icp.name+' > .messages').html(@message)
+        @card_html += "<div class='status-indicator'>&#x2718;</div>"
+        @card_html += "<div class='messages'>"
+        for message in icps[i].messages
+          @card_html += "<div class='message'>" + message + "</div>"
+        @card_html += "</div>"
+        $('.icp')[i].setAttribute('class', 'icp card bad')
+        $('.icp')[i].innerHTML = @card_html

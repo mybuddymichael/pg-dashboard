@@ -1,3 +1,6 @@
+%head
+  = javascript_include_tag "dashboard"
+
 %header
   - if signed_in?
     .sign_out_link= link_to "sign out", signout_path, :method => :delete
@@ -7,7 +10,7 @@
 
   %section.icps
     - @all_icps.each do |icp|
-      %div{class: "card #{icp[:status]}", id: "#{icp[:name]}"}
+      %div{class: "icp card #{icp[:status]}", id: "#{icp[:name]}"}
         .name
           =icp[:name]
         - if icp[:status] == :good
