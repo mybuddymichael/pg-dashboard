@@ -2,32 +2,42 @@
   = javascript_include_tag "dashboard"
 
 %header
-  - if signed_in?
-    .sign_out_link= link_to "sign out", signout_path, :method => :delete
-    .refresh_div refreshing in 10 seconds...
+  .clock
+  .sign_out_link= link_to "[ sign out ]", signout_path, :method => :delete
+  .refresh_div refreshing in 10 seconds...
 
 .content
 
   %section.icps
+    .header Icps
     - @all_icps.each do |icp|
-      %div{class: "icp card #{icp[:status]}", id: "#{icp[:name]}"}
-        .name
-          =icp[:name]
-        - if icp[:status] == :good
-          .status-indicator &#x2714;
-        - else
+      - if icp[:status] == :bad
+        %div{class: "icp card #{icp[:status]}", id: "#{icp[:name]}"}
+          .name
+            =icp[:name]
           .status-indicator &#x2718;
-        - if !icp[:messages].empty?
-          .messages
-            - icp[:messages].each do |message|
-              .message= message
+          - if !icp[:messages].empty?
+            .messages
+              - icp[:messages].each do |message|
+                .message= message
+    .divider
+    - @all_icps.each do |icp|
+      - if icp[:status] == :good
+        %div{class: "icp card #{icp[:status]}", id: "#{icp[:name]}"}
+          .name
+            =icp[:name]
+          .status-indicator &#x2714;
 
   %section.ci-projects
     .header Jenkins projects
     - @ci_projects.each do |project|
-      %div{class: "card #{project[:last_build_result]}"}
-        .name= link_to(project[:name], project[:last_build_url])
-        - if project[:last_build_result] == :good
-          .status-indicator ✔
-        - else
+      - if project[:last_build_result] == :bad
+        %div{class: "jenkins card #{project[:last_build_result]}"}
+          .name= link_to(project[:name], project[:last_build_url])
           .status-indicator ✘
+    .divider
+    - @ci_projects.each do |project|
+      - if project[:last_build_result] == :good
+        %div{class: "jenkins card #{project[:last_build_result]}"}
+          .name= link_to(project[:name], project[:last_build_url])
+          .status-indicator ✔

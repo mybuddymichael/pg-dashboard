@@ -54,18 +54,18 @@ class DashboardController < ApplicationController
         messages: messages }
     end
 
-    # @icps.sort! { |a,b| a[:status] <=> b[:status] }
     @icps.sort_by { |icp| [icp[:status], icp[:name]]}
   end
 
   def get_all_ci_projects
-    CiProject.all.collect do |project|
+    @ci_projects = CiProject.all.collect do |project|
       result = (project.last_build.result == "SUCCESS") ? :good : :bad
 
       { name: project.name,
         last_build_result: result,
         last_build_url: project.last_build.url }
     end
+    @ci_projects.sort_by { |project| [project[:last_build_result], project[:name]]}
   end
 
 end
