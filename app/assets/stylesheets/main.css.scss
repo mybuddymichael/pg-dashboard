@@ -11,7 +11,11 @@ body {
 }
 
 a {
-  color: $dark-blue;
+  color: $grey;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: line-through;
 }
 
 @include keyframes(header-text-pulse) {
@@ -27,123 +31,27 @@ a {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
   width: 100%;
   @include padding(4, 0, 2, 0, $max-width);
 
-  background-color: $grey;
-  box-shadow: $dark-grey 0px 2px 0px;
+  color: $grey;
 
-  @include font-size(14);
-  text-align: center;
+  @include font-size(20);
+  text-align: right;
 
   .sign_out_link {
-    float: left;
-    padding-left: 20px;
+    margin-right: 20px;
   }
   .refresh_div {
-    float: right;
     margin-right: 20px;
+  }
+  .clock {
+    @include font-size(30);
+    margin-left: 25px;
+    float: left;
   }
 
 }
 .pulse {
   @include animation(header-text-pulse, 1.5);
-}
-
-.content {
-  max-width: $max-width;
-  margin: 23px 0 0 0;
-
-  @include respond-to(small-small) {
-    margin: 36px 0 0 0;
-  }
-}
-
-section .header {
-  @include padding(10, 18, 10, 16, $max-width);
-
-  color: $grey;
-  @include font-size(18);
-
-  @include respond-to(small-small) {
-    @include padding(24, 18, 6, 24, $max-width);
-    @include font-size(24);
-  }
-}
-
-.card {
-  @include padding(22, 18, 22, 16, $max-width);
-
-  @include font-size(28);
-
-  @include respond-to(small-small) {
-    width: 90%;
-    @include margin(10, 0, 0, 0, $max-width);
-    margin-left: auto;
-    margin-right: auto;
-    @include padding(20, 18, 18, 16, $max-width);
-
-    border-radius: 6px;
-    @include font-size(32);
-  }
-
-  .name {
-    display: inline-block;
-    overflow: hidden;
-    width: 86%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .status-indicator {
-    display: inline;
-    float: right;
-    margin-top: -6px;
-
-    @include font-size(32);
-
-    @include respond-to(small-small) {
-      margin-top: -4px;
-    }
-  }
-
-  .messages {
-    @include margin(16, 0, 0, 0, $max-width);
-    @include font-size(16);
-    font-weight: normal;
-
-    @include respond-to(small-small) {
-      @include font-size(20);
-    }
-  }
-
-  .message {
-    @include padding(0, 0, 8, 0, $max-width);
-
-    &:last-of-type {
-      padding: 0;
-    }
-  }
-
-  &.good {
-    background-color: $light-blue;
-    border-bottom: 2px solid $dark-light-blue;
-
-    .status-indicator {
-      margin-top: -5px;
-    }
-  }
-
-  &.bad {
-    background-color: $orange;
-    border-bottom: 2px solid $dark-orange;
-  }
-
-  &.ignored {
-    background: $grey;
-    border-bottom: 2px solid $dark-grey;
-  }
 }
