@@ -1,6 +1,6 @@
 class CiBuild
 
-  BASE_URL   = "http://jenkins.progauge.us/job/"
+  BASE_URL   = EnvVar::CI_HOSTNAME
   API_SUFFIX = CiProject::API_SUFFIX
   OPTIONS_HASH = CiProject::OPTIONS_HASH
 
