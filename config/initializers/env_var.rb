@@ -1,9 +1,6 @@
 Rails.application.config.before_configuration do
   module EnvVar
-    DATABASE_USERNAME = ENV["dashboard_database_username"]
-    DATABASE_PASSWORD = ENV["dashboard_database_password"]
-    DATABASE_HOSTNAME = ENV["dashboard_database_hostname"]
-    DATABASE_PORT = ENV["dashboard_database_port"]
+    PRIME_API_HOSTNAME = ENV["prime_api_hostname"]
 
     CI_USERNAME = ENV["dashboard_ci_username"]
     CI_PASSWORD = ENV["dashboard_ci_password"]
