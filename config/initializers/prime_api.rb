@@ -1,6 +1,15 @@
 module PrimeApi
   eval(EnvVar::PRIME_API_HASH_FUNCTION)
 
+  def authenticate(username, password)
+    unless username and password
+      raise ArgumentError, "username or password cannot be nil"
+    end
+
+    response_hash = self.get_response(username, password)
+    response_hash["messageType"] == "InvalidRequest" ? false : true
+  end
+
   def get_response(username, password)
     hash = hash_function(username, password)
 
