@@ -80,13 +80,14 @@ class utils.AutoRefresher
   update_ci_projects: (ci_projects) ->
     @cards_html = "<div class='header'>Jenkins Projects</div> "
     for project in ci_projects
-      if project.last_build_result == 'bad'
-        @cards_html += "<div class='jenkins card bad'> "
+      if project.last_build_result == 'bad' or project.last_build_result == "ignored"
+        @cards_html += "<div class='jenkins card #{project.last_build_result}'> "
         @cards_html += "<div class='name'>"
         @cards_html += "<a target='_blank' href='"+ project.last_build_url +
           "'>" + project.name + "</a>"
         @cards_html += "</div>"
-        @cards_html += "<div class='status-indicator'>&#x2718;</div> "
+        if project.last_build_url == "bad"
+          @cards_html += "<div class='status-indicator'>&#x2718;</div> "
         @cards_html += "</div> "
     @cards_html += "<div class='divider'></div> "
     for project in ci_projects

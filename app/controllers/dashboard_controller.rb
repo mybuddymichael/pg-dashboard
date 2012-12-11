@@ -55,7 +55,13 @@ class DashboardController < ApplicationController
 
   def get_all_ci_projects
     @ci_projects = CiProject.all.collect do |project|
-      result = (project.last_build.result == "SUCCESS") ? :good : :bad
+      if project.last_build.result == "SUCCESS"
+        result = :good
+      elsif project.last_build.result == nil
+        result = :ignored
+      else
+        result = :bad
+      end
 
       { name: project.name,
         last_build_result: result,

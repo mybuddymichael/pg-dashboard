@@ -31,11 +31,12 @@
   %section.ci-projects
     .header Jenkins Project
     - @ci_projects.each do |project|
-      - if project[:last_build_result] == :bad
+      - if project[:last_build_result] == :bad or project[:last_build_result] == :ignored
         %div{class: "jenkins card #{project[:last_build_result]}"}
           .name= link_to(project[:name], project[:last_build_url],
             :target => "_blank")
-          .status-indicator ✘
+          - if project[:last_build_url] == :bad
+            .status-indicator ✘
     .divider
     - @ci_projects.each do |project|
       - if project[:last_build_result] == :good
