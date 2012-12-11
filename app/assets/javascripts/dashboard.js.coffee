@@ -45,7 +45,7 @@ class utils.AutoRefresher
 
     $.ajax
       beforeSend: ->
-        $(".refresh_div").text('refeshing')
+        $(".refresh_div").text('refreshing')
         $(".refresh_div").addClass('pulse')
       dataType: "json"
       url: "/dashboard"
