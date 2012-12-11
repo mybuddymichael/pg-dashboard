@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
-gem 'sqlite3'
-
 gem 'haml'
 gem 'httparty'
 gem 'grit'
@@ -13,6 +11,8 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sqlite3'
+
   # gem 'annotate', '2.5.0'
   gem 'rb-fsevent'
   gem 'guard'
