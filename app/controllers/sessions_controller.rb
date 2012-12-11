@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     user = params[:session][:username]
-    if User.authenticate(user, params[:session][:password])
+    password = params[:session][:password]
+
+    if User.authenticate(user, password)
       sign_in(user)
       redirect_to root_path
     else
