@@ -1,0 +1,2 @@
+class GitLogsController < ApplicationController
+end

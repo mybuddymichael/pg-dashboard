@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211001335) do
+ActiveRecord::Schema.define(:version => 20121211213237) do
+
+  create_table "git_logs", :force => true do |t|
+    t.string   "sha"
+    t.string   "message"
+    t.string   "author"
+    t.date     "commit_time"
+    t.string   "branch"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "icp_metadata", :id => false, :force => true do |t|
     t.integer "icp_id",                             :null => false
