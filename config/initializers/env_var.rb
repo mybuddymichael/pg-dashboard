@@ -2,6 +2,8 @@ Rails.application.config.before_configuration do
   module EnvVar
     PRIME_API_HOSTNAME = ENV["prime_api_hostname"]
     PRIME_API_HASH_FUNCTION = ENV["prime_api_hash_function"]
+    PRIME_API_USERNAME = ENV["prime_api_username"]
+    PRIME_API_PASSWORD = ENV["prime_api_password"]
 
     CI_USERNAME = ENV["dashboard_ci_username"]
     CI_PASSWORD = ENV["dashboard_ci_password"]
