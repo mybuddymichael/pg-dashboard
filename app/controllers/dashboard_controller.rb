@@ -45,11 +45,7 @@ class DashboardController < ApplicationController
         messages.push("Last parse was #{time_ago_in_words(last_parse)} ago")
       end
 
-      if !icp.icp_metadata.enabled?
-        status = :ignored
-      end
-
-      { name: icp.icp_name,
+      { name: icp.name,
         status: status,
         messages: messages }
     end
