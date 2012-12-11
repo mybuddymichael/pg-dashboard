@@ -1,17 +1,13 @@
-Rails.application.config.before_initialize do
+Rails.application.config.before_configuration do
   module EnvVar
-    DATABASE_USERNAME = ENV["dashboard_database_username"]
-    DATABASE_PASSWORD = ENV["dashboard_database_password"]
-    DATABASE_HOSTNAME = ENV["dashboard_database_hostname"]
-    DATABASE_PORT = ENV["dashboard_database_port"]
+    PRIME_API_HOSTNAME = ENV["prime_api_hostname"]
+    PRIME_API_HASH_FUNCTION = ENV["prime_api_hash_function"]
+    PRIME_API_USERNAME = ENV["prime_api_username"]
+    PRIME_API_PASSWORD = ENV["prime_api_password"]
 
     CI_USERNAME = ENV["dashboard_ci_username"]
     CI_PASSWORD = ENV["dashboard_ci_password"]
     CI_HOSTNAME = ENV["dashboard_ci_hostname"]
-
-    ISSUE_TRACKER_USERNAME = ENV["dashboard_issue_tracker_username"]
-    ISSUE_TRACKER_PASSWORD = ENV["dashboard_issue_tracker_password"]
-    ISSUE_TRACKER_HOSTNAME = ENV["dashboard_issue_tracker_hostname"]
 
     self.constants.each do |constant|
       if EnvVar.const_get(constant).nil?
