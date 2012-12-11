@@ -1,4 +1,6 @@
 module PrimeApi
+  module_function
+
   eval(EnvVar::PRIME_API_HASH_FUNCTION)
 
   def authenticate(username, password)
