@@ -63,7 +63,6 @@ class utils.AutoRefresher
       if icp.status == 'bad'
         @cards_html += "<div class='icp card bad'> "
         @cards_html += "<div class='name'>" + icp.name + "</div> "
-        @cards_html += "<div class='status-indicator'>&#x2718;</div> "
         @cards_html += "<div class='messages'> "
         for message in icp.messages
           @cards_html += "<div class='message'>" + message + "</div> "
@@ -73,7 +72,6 @@ class utils.AutoRefresher
       if icp.status == 'good'
         @cards_html += "<div class='icp card good'> "
         @cards_html += "<div class='name'>" + icp.name + "</div> "
-        @cards_html += "<div class='status-indicator'>&#x2714;</div> "
         @cards_html += "</div> "
     $('.icps').html(@cards_html)
 
@@ -86,8 +84,6 @@ class utils.AutoRefresher
         @cards_html += "<a target='_blank' href='"+ project.last_build_url +
           "'>" + project.name + "</a>"
         @cards_html += "</div>"
-        if project.last_build_url == "bad"
-          @cards_html += "<div class='status-indicator'>&#x2718;</div> "
         @cards_html += "</div> "
     @cards_html += "<div class='divider'></div> "
     for project in ci_projects
@@ -97,6 +93,5 @@ class utils.AutoRefresher
         @cards_html += "<a target='_blank' href='"+ project.last_build_url +
           "'>" + project.name + "</a>"
         @cards_html += "</div>"
-        @cards_html += "<div class='status-indicator'>&#x2714;</div> "
         @cards_html += "</div> "
     $('.ci-projects').html(@cards_html)
