@@ -6,7 +6,7 @@ utils = Dashboard.utils = {}
 
 $(document).ready ->
   new Dashboard.utils.AutoRefresher()
-  @clock = setInterval(clock_count, 1000)
+  setInterval(clock_count, 1000)
 
 clock_count = ->
   @time = new Date()
