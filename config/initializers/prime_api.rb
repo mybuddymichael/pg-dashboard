@@ -12,7 +12,8 @@ module PrimeApi
     response_hash["messageType"] == "InvalidRequest" ? false : true
   end
 
-  def get_response(username, password)
+  def get_response(username = EnvVar::PRIME_API_USERNAME,
+                   password = EnvVar::PRIME_API_PASSWORD)
     hash = hash_function(username, password)
 
     n1 = SecureRandom.random_number(100000) + 1
