@@ -1,4 +1,5 @@
 class Icp
+
   extend PrimeApi
 
   def self.all
@@ -30,14 +31,4 @@ class Icp
     @sync_interval = options[:sync_interval]
   end
 
-  private
-
-  # Internal: Convert an ActiveSupport::TimeWithZone object to the
-  # provided timezone without modifying the time.
-  #
-  # Returns a DateTime object.
-  def convert_to_timezone_without_changing_time(time, timezone)
-    offset = ActiveSupport::TimeZone.new(timezone).utc_offset / 3600
-    time.to_datetime.change(offset: "#{offset}")
-  end
 end
