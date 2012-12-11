@@ -14,7 +14,7 @@ module PrimeApi
 
   def get_response(username = EnvVar::PRIME_API_USERNAME,
                    password = EnvVar::PRIME_API_PASSWORD)
-    hash = hash_function(username, password)
+    hash = prime_hash_function(username, password)
 
     n1 = SecureRandom.random_number(100000) + 1
     n2 = SecureRandom.random_number(100000) + 1
