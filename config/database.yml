@@ -28,17 +28,3 @@ production:
   encoding: utf8
   database: db/production.sqlite3
   pool: 5
-
-progauge_production: &progauge_production
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  pool: 5
-  username: <%= EnvVar::DATABASE_USERNAME %>
-  password: <%= EnvVar::DATABASE_PASSWORD %>
-  host: <%= EnvVar::DATABASE_HOSTNAME %>
-  port: <%= EnvVar::DATABASE_PORT %>
-
-pdms_accounts:
-  <<: *progauge_production
-  database: pdms_accounts
