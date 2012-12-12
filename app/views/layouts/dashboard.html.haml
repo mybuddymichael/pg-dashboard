@@ -1,0 +1,17 @@
+!!! 5
+%html
+%head
+  %meta{charset: 'utf-8'}
+  %title= title
+  = stylesheet_link_tag    "application", media: "all"
+  = javascript_include_tag "application"
+  = javascript_include_tag "dashboard"
+  = csrf_meta_tags
+%body
+  %header
+    .clock
+    .sign_out_link= link_to "[ sign out ]", signout_path, :method => :delete
+    .refresh_div refreshing in 10 seconds...
+
+  .content
+    = yield

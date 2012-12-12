@@ -1,41 +1,31 @@
-%head
-  = javascript_include_tag "dashboard"
+%section.icps
+  .header Icps
+  - @all_icps.each do |icp|
+    - if icp[:status] == :bad
+      %div{class: "icp card #{icp[:status]}"}
+        .name
+          =icp[:name]
+        - if !icp[:messages].empty?
+          .messages
+            - icp[:messages].each do |message|
+              .message= message
+  .divider
+  - @all_icps.each do |icp|
+    - if icp[:status] == :good
+      %div{class: "icp card #{icp[:status]}"}
+        .name
+          =icp[:name]
 
-%header
-  .clock
-  .sign_out_link= link_to "[ sign out ]", signout_path, :method => :delete
-  .refresh_div refreshing in 10 seconds...
-
-.content
-
-  %section.icps
-    .header Icps
-    - @all_icps.each do |icp|
-      - if icp[:status] == :bad
-        %div{class: "icp card #{icp[:status]}"}
-          .name
-            =icp[:name]
-          - if !icp[:messages].empty?
-            .messages
-              - icp[:messages].each do |message|
-                .message= message
-    .divider
-    - @all_icps.each do |icp|
-      - if icp[:status] == :good
-        %div{class: "icp card #{icp[:status]}"}
-          .name
-            =icp[:name]
-
-  %section.ci-projects
-    .header Jenkins Project
-    - @ci_projects.each do |project|
-      - if project[:last_build_result] == :bad or project[:last_build_result] == :ignored
-        %div{class: "jenkins card #{project[:last_build_result]}"}
-          .name= link_to(project[:name], project[:last_build_url],
-            :target => "_blank")
-    .divider
-    - @ci_projects.each do |project|
-      - if project[:last_build_result] == :good
-        %div{class: "jenkins card #{project[:last_build_result]}"}
-          .name= link_to(project[:name], project[:last_build_url],
-            :target => "_blank")
+%section.ci-projects
+  .header Jenkins Project
+  - @ci_projects.each do |project|
+    - if project[:last_build_result] == :bad or project[:last_build_result] == :ignored
+      %div{class: "jenkins card #{project[:last_build_result]}"}
+        .name= link_to(project[:name], project[:last_build_url],
+          :target => "_blank")
+  .divider
+  - @ci_projects.each do |project|
+    - if project[:last_build_result] == :good
+      %div{class: "jenkins card #{project[:last_build_result]}"}
+        .name= link_to(project[:name], project[:last_build_url],
+          :target => "_blank")
