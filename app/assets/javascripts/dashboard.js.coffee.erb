@@ -47,11 +47,9 @@ class utils.AutoRefresher
       beforeSend: ->
         $(".refresh_div").text('refreshing')
         $(".refresh_div").addClass('pulse')
-      dataType: "json"
+      dataType: "html"
       url: "/dashboard"
-      success: (data) ->
-        _this.update_icps(data["all_icps"])
-        _this.update_ci_projects(data["all_ci_projects"])
+      success: (data) -> $(".content").html data
       complete: ->
         $(".refresh_div").removeClass('pulse')
         $(".refresh_div").text("refreshing in " + _this.refresh_time_in_sec + " seconds")
