@@ -12,10 +12,11 @@ class DashboardController < ApplicationController
     @ci_projects = get_all_ci_projects
 
     respond_to do |format|
-      format.html
+      format.html { render layout: false  if request.xhr? }
       format.json { render :json => { all_icps: @all_icps,
                                       all_ci_projects: @ci_projects}}
     end
+
   end
 
   private
