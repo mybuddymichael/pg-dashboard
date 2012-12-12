@@ -12,7 +12,7 @@
     Dashboard.utils.url_map = { index: "#{url_for action: "index"}" }
 
   %header
-    .clock
+    .clock loading...
     .sign_out_link= link_to "[ sign out ]", signout_path, :method => :delete
     .refresh_div refreshing in 10 seconds...
 
