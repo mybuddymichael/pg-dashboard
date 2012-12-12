@@ -47,7 +47,7 @@ class utils.AutoRefresher
         $(".refresh_div").text('refreshing')
         $(".refresh_div").addClass('pulse')
       dataType: "html"
-      url: "/dashboard"
+      url: utils.url_map.index
       success: (data) -> $(".content").html data
       complete: ->
         $(".refresh_div").removeClass('pulse')
