@@ -39,13 +39,16 @@ class CiProject
     @url = url
     @last_build_number = last_build_number
     @last_build_url = last_build_url
+    @last_build = nil
   end
 
-  # Public: Get the most recent build for the project as a CiBuild.
+  # Public: Get the most recent build for the project as a CiBuild. The
+  # build is stored for subsequent calls.
   #
   # Returns a CiBuild.
   def last_build
-    CiBuild.find_by_project_name_and_build_number(@name, @last_build_number)
+    @last_build ||=
+      CiBuild.find_by_project_name_and_build_number(@name, @last_build_number)
   end
 
   private
