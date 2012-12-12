@@ -9,9 +9,8 @@ $(document).ready ->
   setInterval(clock_count, 1000)
 
 clock_count = ->
-  @time = new Date()
-  @st = @time.toString()
-  $('.clock').html(@st)
+  time = new Date().toString()
+  $('.clock').html time
 
 class utils.AutoRefresher
   constructor: ->
