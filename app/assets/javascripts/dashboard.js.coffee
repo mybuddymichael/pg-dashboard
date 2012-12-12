@@ -6,12 +6,11 @@ utils = Dashboard.utils = {}
 
 $(document).ready ->
   new Dashboard.utils.AutoRefresher()
-  @clock = setInterval(clock_count, 1000)
+  setInterval(clock_count, 1000)
 
 clock_count = ->
-  @time = new Date()
-  @st = @time.toString()
-  $('.clock').html(@st)
+  time = new Date().toString()
+  $('.clock').html time
 
 class utils.AutoRefresher
   constructor: ->
@@ -47,51 +46,10 @@ class utils.AutoRefresher
       beforeSend: ->
         $(".refresh_div").text('refreshing')
         $(".refresh_div").addClass('pulse')
-      dataType: "json"
-      url: "/dashboard"
-      success: (data) ->
-        _this.update_icps(data["all_icps"])
-        _this.update_ci_projects(data["all_ci_projects"])
+      dataType: "html"
+      url: utils.url_map.index
+      success: (data) -> $(".content").html data
       complete: ->
         $(".refresh_div").removeClass('pulse')
         $(".refresh_div").text("refreshing in " + _this.refresh_time_in_sec + " seconds")
         _this.start_timer()
-
-  update_icps: (icps) ->
-    @cards_html = "<div class='header'>Icps</div> "
-    for icp in icps
-      if icp.status == 'bad'
-        @cards_html += "<div class='icp card bad'> "
-        @cards_html += "<div class='name'>" + icp.name + "</div> "
-        @cards_html += "<div class='messages'> "
-        for message in icp.messages
-          @cards_html += "<div class='message'>" + message + "</div> "
-        @cards_html += "</div></div> "
-    @cards_html += "<div class='divider'></div> "
-    for icp in icps
-      if icp.status == 'good'
-        @cards_html += "<div class='icp card good'> "
-        @cards_html += "<div class='name'>" + icp.name + "</div> "
-        @cards_html += "</div> "
-    $('.icps').html(@cards_html)
-
-  update_ci_projects: (ci_projects) ->
-    @cards_html = "<div class='header'>Jenkins Projects</div> "
-    for project in ci_projects
-      if project.last_build_result == 'bad' or project.last_build_result == "ignored"
-        @cards_html += "<div class='jenkins card #{project.last_build_result}'> "
-        @cards_html += "<div class='name'>"
-        @cards_html += "<a target='_blank' href='"+ project.last_build_url +
-          "'>" + project.name + "</a>"
-        @cards_html += "</div>"
-        @cards_html += "</div> "
-    @cards_html += "<div class='divider'></div> "
-    for project in ci_projects
-      if project.last_build_result == 'good'
-        @cards_html += "<div class='jenkins card good'> "
-        @cards_html += "<div class='name'>"
-        @cards_html += "<a target='_blank' href='"+ project.last_build_url +
-          "'>" + project.name + "</a>"
-        @cards_html += "</div>"
-        @cards_html += "</div> "
-    $('.ci-projects').html(@cards_html)
