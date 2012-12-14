@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = params[:session][:username]
+    user = params[:session][:username].downcase
     password = params[:session][:password]
 
     if User.authenticate(user, password)
