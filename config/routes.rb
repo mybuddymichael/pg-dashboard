@@ -8,5 +8,5 @@ Dashboard::Application.routes.draw do
   root :to => "dashboard#index"
   match "/signin", :to => "sessions#new"
   match "/signout", :to => "sessions#destroy", via: :delete
-  match "/update_git", :to => "git_logs#new", via: :post
+  match "/update_git", :to => "git_logs#update_git", via: :post
 end
