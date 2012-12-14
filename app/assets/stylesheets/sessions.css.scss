@@ -1,5 +1,44 @@
 @import "config";
 
+@media screen and (max-device-width: 480px) {
+  .login_box {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    @include font-size(60);
+
+    input {
+      text-align: center;
+      color: $dark-grey !important;
+      margin-bottom: 30px;
+      border-radius: 0;
+      border: 0;
+      width: 92%;
+      height: 100px;
+
+    }
+    input[type='submit']{
+      @include font-size(80);
+      background: $light-blue;
+      width: 100%;
+      margin-top: 25px;
+      height: 150px;
+
+      &:hover {
+        background: $medium-dark-light-blue;
+      }
+    }
+
+    .flash_box {
+      color: $orange;
+      width: 90%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .login_box {
     margin-right: auto;
@@ -39,7 +78,7 @@
   }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 1000px) {
   .login_box {
     position: absolute;
     top: 50%;
