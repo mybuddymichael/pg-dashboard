@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if User.authenticate(user, password)
       sign_in(user)
-      redirect_to root_path
+      redirect_to "/dashboard"
     else
       flash[:error] = "Invalid email/password combination!"
       render 'new'

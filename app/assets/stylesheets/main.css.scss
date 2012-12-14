@@ -3,7 +3,6 @@
 
 body {
   background-color: $dark-blue;
-
   color: $dark-blue;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
@@ -48,7 +47,6 @@ header {
   .clock {
     @include font-size(30);
     margin-left: 25px;
-    float: left;
   }
 
 }
