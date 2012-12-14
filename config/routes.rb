@@ -5,7 +5,7 @@ Dashboard::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
 
-  root :to => "dashboard#index"
+  root :to => "sessions#new"
   match "/signin", :to => "sessions#new"
   match "/signout", :to => "sessions#destroy", via: :delete
   match "/update_git", :to => "git_logs#update_git", via: :post
