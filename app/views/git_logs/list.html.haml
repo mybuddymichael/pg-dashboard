@@ -1,0 +1,6 @@
+- @gits.each do |git|
+  %div{class: "icp card bad"}
+    =git[:sha]
+    =git[:commit_time]
+    =git[:author]
+    =git[:branch]

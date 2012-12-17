@@ -18,4 +18,8 @@ class GitLogsController < ApplicationController
 
     render :nothing => true
   end
+
+  def list
+    @gits = GitLog.find :all
+  end
 end
