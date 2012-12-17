@@ -1,4 +1,5 @@
 class GitLogsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:update_git]
 
   def update_git
 
