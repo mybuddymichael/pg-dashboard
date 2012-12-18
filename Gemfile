@@ -25,6 +25,7 @@ end
 group :production do
   gem 'thin'
   gem 'therubyracer', :platforms => :ruby
+  gem 'libv8', '~> 3.11.8'
 end
 
 # Gems used only for assets and not required
