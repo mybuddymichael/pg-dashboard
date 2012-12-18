@@ -62,6 +62,7 @@ class CiProject
     response = HTTParty.get(BASE_URL + "job/" + name + API_SUFFIX, OPTIONS_HASH)
     ActiveSupport::JSON.decode(response.body)
   end
+  private_class_method :fetch_project_hash_by_name
 
   # Internal: Get a list of all project names and URLs.
   #
@@ -70,5 +71,6 @@ class CiProject
     response = HTTParty.get(BASE_URL + API_SUFFIX, OPTIONS_HASH)
     ActiveSupport::JSON.decode(response.body)["jobs"]
   end
+  private_class_method :list
 
 end
