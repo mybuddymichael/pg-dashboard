@@ -3,9 +3,8 @@
 @media screen and (max-device-width: 480px) {
   header {
     @include font-size(45);
-    background: $grey;
-    border-bottom: 10px solid $dark-grey;
-    color: $dark-blue;
+    background: $black;
+    color: $white;
     text-align: center;
     padding-bottom: 25px;
     position: fixed;
@@ -19,51 +18,53 @@
     }
     .sign_out_link {
       margin-right: 15px;
-      a { color: $dark-blue; }
+      a { color: $white; }
     }
   }
   .content {
     padding-top: 150px;
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   section .header {
-    color: $grey;
+    color: $white;
     @include font-size(50);
-    @include padding(15, 15, 15, 15, $max-width);
+    @include padding(10,0, 10, 10, $max-width);
   }
 
   .card {
+    background: $white;
+    @include font-size(45);
+    width: 100%;
+    margin-bottom: 15px;
+
+    .title {
+      background: $black;
+      color: $white;
+      padding: 15px;
+      .name {
+        display: inline;
+      }
+
+      .status-indicator {
+        display: inline;
+        float: right;
+        padding-right: 15px;
+      }
+    }
+
     .divider {
       height: 20px;
       width: 100%;
     }
-    @include padding(10,0, 10, 10, $max-width);
-    @include font-size(45);
-    width: 100%;
-    margin-bottom: 5px;
-
-    .name {
-      display: inline-block;
-      overflow: hidden;
-      width: 86%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      margin-bottom: 15px;
-    }
-
-    .status-indicator {
-      display: inline;
-      float: right;
-      margin-top: -6px;
-
-      @include respond-to(small-small) {
-        margin-top: -4px;
-      }
-    }
 
     .messages {
+      padding: 15px;
+      width: 100%;
+      min-height: 40px;
       @include margin(0, 0, 0, 0, $max-width);
-      @include font-size(30);
+      @include font-size(35);
       font-weight: normal;
     }
 
@@ -76,27 +77,19 @@
     }
 
     &.good {
-      background-color: $light-blue;
-      border-bottom: 10px solid $dark-light-blue;
-
-      .status-indicator {
-        margin-top: -5px;
-      }
+      background: $light-blue;
     }
 
     &.bad {
-      background-color: $orange;
-      border-bottom: 10px solid $dark-orange;
+      background: $orange;
     }
 
     &.ignored {
-      background: $grey;
-      border-bottom: 2px solid $dark-grey;
     }
   }
   .jenkins {
     a {
-      color: $dark-blue;
+      color: $white;
     }
   }
 }

@@ -3,8 +3,11 @@
   - @all_icps.each do |icp|
     - if icp[:status] == :bad
       %div{class: "icp card #{icp[:status]}"}
-        .name
-          =icp[:name]
+        .title
+          .name
+            =icp[:name]
+          .status-indicator
+            &#33;
         - if !icp[:messages].empty?
           .messages
             - icp[:messages].each do |message|
@@ -13,8 +16,10 @@
   - @all_icps.each do |icp|
     - if icp[:status] == :good
       %div{class: "icp card #{icp[:status]}"}
-        .name
-          =icp[:name]
+        .title
+          .name
+            =icp[:name]
+        .messages
 
 %section.ci-projects
   .header Jenkins Project

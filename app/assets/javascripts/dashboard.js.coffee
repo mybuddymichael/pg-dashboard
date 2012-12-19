@@ -5,8 +5,8 @@ Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
 $(document).ready ->
-  new Dashboard.utils.AutoRefresher()
-  setInterval(clock_count, 1000)
+  # new Dashboard.utils.AutoRefresher()
+  # setInterval(clock_count, 1000)
 
 clock_count = ->
   time = new Date().toString()

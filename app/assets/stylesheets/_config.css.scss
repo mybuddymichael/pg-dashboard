@@ -58,6 +58,8 @@ $transparent-orange: transparentize($orange, 0.7);
 $grey: #55606e;
 $dark-grey: darken($grey, 10%);
 $transparent-grey: transparentize($grey, 0.7);
+$black: #222;
+$white: #eee;
 
 
 @mixin animation($name, $duration, $count: infinite, $function: ease-in-out) {
