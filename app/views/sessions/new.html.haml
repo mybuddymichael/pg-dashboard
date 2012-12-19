@@ -1,12 +1,14 @@
 .content
   .login_box
+    .title sign in
     .flash_box
       - flash.each do |key,value|
         %div{class: "alert alert-#{key}"}
           = value
-    = form_for :session, :url => sessions_path do |f|
-      = f.text_field :username, :placeholder => "username"
+    .form
+      = form_for :session, :url => sessions_path do |f|
+        = f.text_field :username, :placeholder => "username"
 
-      = f.password_field :password, :placeholder => "password"
+        = f.password_field :password, :placeholder => "password"
 
-      = f.submit "sign in"
+        = f.submit "sign in"

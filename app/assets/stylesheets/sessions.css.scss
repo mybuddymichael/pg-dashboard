@@ -1,117 +1,90 @@
 @import "config";
 
+
+@media screen and (min-width: 400px) {
+  .login_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: -109px;
+    width: 380px;
+    background: #fff;
+    @include font-size(22);
+
+    .form {
+      padding: 15px;
+      input {
+        text-align: center;
+        color: $dark-grey !important;
+        margin-bottom: 15px;
+        border: 1 solid #eef;
+        width: 98%;
+        @include font-size(30);
+
+      }
+      input[type='submit']{
+        background: $light-blue;
+        width: 100%;
+        padding: 15px;
+        border: 0;
+        margin-bottom: 0;
+
+        &:hover {
+          background: $medium-dark-light-blue;
+        }
+      }
+    }
+
+    .title {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #222;
+      color: #eee;
+    }
+    .flash_box {
+      color: $orange;
+      font-weight: normal;
+      width: 80%;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
 @media screen and (max-device-width: 480px) {
   .login_box {
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
     @include font-size(60);
 
-    input {
-      text-align: center;
-      color: $dark-grey !important;
-      margin-bottom: 30px;
-      border-radius: 0;
-      border: 0;
-      width: 92%;
-      height: 100px;
-
-    }
-    input[type='submit']{
-      @include font-size(80);
-      background: $light-blue;
-      width: 100%;
-      margin-top: 25px;
-      height: 150px;
-
-      &:hover {
-        background: $medium-dark-light-blue;
+    .form{
+      padding: 30px;
+      input {
+        text-align: center;
+        color: $dark-grey !important;
+        margin-bottom: 30px;
+        border-radius: 0;
+        width: 90.5%;
+        @include font-size(80);
       }
+      input[type='submit']{
+        background: $light-blue;
+        width: 100%;
+
+        &:hover {
+          background: $medium-dark-light-blue;
+        }
+      }
+    }
+    .title {
+      padding: 30px;
     }
 
     .flash_box {
       color: $orange;
       width: 90%;
-      text-align: center;
-      margin: auto;
-      margin-bottom: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .login_box {
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    @include font-size(22);
-
-    input {
-      text-align: center;
-      display: block;
-      color: $dark-grey !important;
-      margin-bottom: 10px;
-      margin-right: auto;
-      margin-left: auto;
-      border: 0;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      width: 100%;
-
-    }
-    input[type='submit']{
-      @include font-size(40);
-      background: $light-blue;
-
-      &:hover {
-        background: $medium-dark-light-blue;
-      }
-    }
-
-    .flash_box {
-      color: $orange;
-      width: 80%;
-      text-align: center;
-      margin: auto;
-      margin-bottom: 10px;
-    }
-  }
-}
-
-@media screen and (min-width: 985px) {
-  .login_box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -200px;
-    margin-top: -109px;
-    width: 380px;
-    padding: 10px;
-    background: $grey;
-    @include font-size(22);
-
-    input {
-      text-align: center;
-      display: block;
-      color: $dark-grey !important;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 0;
-
-    }
-    input[type='submit']{
-      @include font-size(40);
-      background: $light-blue;
-      width: 100%;
-
-      &:hover {
-        background: $medium-dark-light-blue;
-      }
-    }
-
-    .flash_box {
-      color: $orange;
-      width: 80%;
       text-align: center;
       margin: auto;
       margin-bottom: 10px;
