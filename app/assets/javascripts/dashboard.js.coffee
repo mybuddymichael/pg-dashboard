@@ -16,7 +16,7 @@ class utils.AutoRefresher
   constructor: ->
     @$icps = $(".icps")
     @$timer = $("#timer")
-    @refresh_time_in_sec = 10
+    @refresh_time_in_sec = 30
     @refresh_interval
     @start_timer()
 
@@ -34,7 +34,7 @@ class utils.AutoRefresher
           @refresh_time_in_sec + " seconds...")
 
     else
-      @refresh_time_in_sec = 10
+      @refresh_time_in_sec = 30
       clearInterval(@refresh_interval)
       @update_data()
 
