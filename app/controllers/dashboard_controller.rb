@@ -47,6 +47,10 @@ class DashboardController < ApplicationController
       end
 
       { name: icp.name,
+        field_name: icp.field_name,
+        company_name: icp.company_name,
+        area_name: icp.area_name,
+        lease_name: icp.lease_name,
         status: status,
         messages: messages }
     end

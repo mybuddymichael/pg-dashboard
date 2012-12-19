@@ -53,3 +53,8 @@ header {
 .pulse {
   @include animation(header-text-pulse, 1.5);
 }
+
+.bold {
+  font-weight: bold;
+  display: inline;
+}

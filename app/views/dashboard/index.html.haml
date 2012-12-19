@@ -8,10 +8,20 @@
             =icp[:name]
           .status-indicator
             &#33;
-        - if !icp[:messages].empty?
-          .messages
-            - icp[:messages].each do |message|
-              .message= message
+        .messages
+          - icp[:messages].each do |message|
+            .message= message
+        .details
+          = icp[:company_name]
+          .detail
+            .bold Field:
+            = icp[:field_name]
+          .detail
+            .bold Lease:
+            = icp[:lease_name]
+          .detail
+            .bold Area:
+            = icp[:area_name]
   .divider
   - @all_icps.each do |icp|
     - if icp[:status] == :good
@@ -20,6 +30,17 @@
           .name
             =icp[:name]
         .messages
+        .details
+          = icp[:company_name]
+          .detail
+            .bold Field:
+            = icp[:field_name]
+          .detail
+            .bold Lease:
+            = icp[:lease_name]
+          .detail
+            .bold Area:
+            = icp[:area_name]
 
 %section.ci-projects
   .header Jenkins Project
@@ -29,7 +50,6 @@
         .title
           .name= link_to(project[:name], project[:last_build_url],
             :target => "_blank")
-          .status-indicator &#33;
         .messages
   .divider
   - @ci_projects.each do |project|

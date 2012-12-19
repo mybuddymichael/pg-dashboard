@@ -7,6 +7,8 @@ utils = Dashboard.utils = {}
 $(document).ready ->
   # new Dashboard.utils.AutoRefresher()
   # setInterval(clock_count, 1000)
+  $('.icp').on "click", ->
+    $(this).find('.details').slideToggle()
 
 clock_count = ->
   time = new Date().toString()
