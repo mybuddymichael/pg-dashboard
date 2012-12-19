@@ -168,6 +168,24 @@
       @include margin(16, 0, 0, 0, $max-width);
       font-weight: normal;
     }
+    .details {
+      padding: 15px;
+      width: 80%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      min-height: 10px;
+      @include margin(0, 0, 0, 0, $max-width);
+      @include font-size(45);
+      display: none;
+    }
+
+    .detail {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-weight: normal;
+      @include padding(0, 0, 0, 10, $max-width);
+    }
   }
   .icp {
     width: 320px;

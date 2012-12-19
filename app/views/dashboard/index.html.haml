@@ -50,6 +50,8 @@
         .title
           .name= link_to(project[:name], project[:last_build_url],
             :target => "_blank")
+          .status-indicator
+            &#33;
         .messages
   .divider
   - @ci_projects.each do |project|

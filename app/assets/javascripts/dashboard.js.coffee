@@ -4,9 +4,20 @@ $ = root.jQuery
 Dashboard = root.Dashboard = root.Dashboard ? {}
 utils = Dashboard.utils = {}
 
+window.addEventListener('load', ->
+  new FastClick(document.body)
+, false)
+
 $(document).ready ->
-  # new Dashboard.utils.AutoRefresher()
-  # setInterval(clock_count, 1000)
+  new Dashboard.utils.AutoRefresher()
+  setInterval(clock_count, 1000)
+  # userAgent = navigator.userAgent.toLowerCase();
+  # isIphone = (userAgent.indexOf('iphone') != -1) ? true : false;
+  # if isIphone
+  #   onclick = "$(this).find('.details').slideToggle()"
+  #   $('.icp').bind 'tap', ->
+  #     $(this).find('.details').slideToggle()
+  # else
   $('.icp').on "click", ->
     $(this).find('.details').slideToggle()
 
