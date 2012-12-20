@@ -1,56 +1,96 @@
 @import "config";
 
 
-@media screen and (min-width: 400px) {
-  .login_box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -190px;
-    margin-top: -109px;
-    width: 380px;
-    background: #fff;
-    @include font-size(22);
+// @media screen and (min-width: 400px) {
+//   .login_box {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     margin-left: -190px;
+//     margin-top: -109px;
+//     width: 380px;
+//     background: #fff;
+//     @include font-size(22);
 
-    .form {
-      padding: 15px;
-      input {
-        text-align: center;
-        color: $dark-grey !important;
-        margin-bottom: 15px;
-        border: 1 solid #eef;
-        width: 98%;
-        @include font-size(30);
+//     .form {
+//       padding: 15px;
+//       input {
+//         text-align: center;
+//         color: $dark-grey !important;
+//         margin-bottom: 15px;
+//         border: 1 solid #eef;
+//         width: 98%;
+//         @include font-size(30);
 
-      }
-      input[type='submit']{
-        background: $light-blue;
-        width: 100%;
-        padding: 15px;
-        border: 0;
-        margin-bottom: 0;
+//       }
+//       input[type='submit']{
+//         background: $light-blue;
+//         width: 100%;
+//         padding: 15px;
+//         border: 0;
+//         margin-bottom: 0;
 
-        &:hover {
-          background: $medium-dark-light-blue;
-        }
-      }
-    }
+//         &:hover {
+//           background: $medium-dark-light-blue;
+//         }
+//       }
+//     }
 
-    .title {
-      margin-bottom: 15px;
-      padding: 15px;
-      background: #222;
-      color: #eee;
-    }
-    .flash_box {
-      color: $orange;
-      font-weight: normal;
-      width: 80%;
-      text-align: center;
-      margin: auto;
-    }
-  }
-}
+//     .title {
+//       margin-bottom: 15px;
+//       padding: 15px;
+//       background: #222;
+//       color: #eee;
+//     }
+//     .flash_box {
+//       color: $orange;
+//       font-weight: normal;
+//       width: 80%;
+//       text-align: center;
+//       margin: auto;
+//     }
+//   }
+// }
+// @media screen and (max-device-width: 480px) {
+//   .login_box {
+//     top: 0;
+//     left: 0;
+//     margin: 0;
+//     width: 100%;
+//     @include font-size(60);
+
+//     .form{
+//       padding: 30px;
+//       input {
+//         text-align: center;
+//         color: $dark-grey !important;
+//         margin-bottom: 30px;
+//         border-radius: 0;
+//         width: 90%;
+//         @include font-size(80);
+//       }
+//       input[type='submit']{
+//         background: $light-blue;
+//         width: 100%;
+
+//         &:hover {
+//           background: $medium-dark-light-blue;
+//         }
+//       }
+//     }
+//     .title {
+//       padding: 30px;
+//     }
+
+//     .flash_box {
+//       color: $orange;
+//       width: 90%;
+//       text-align: center;
+//       margin: auto;
+//       margin-bottom: 10px;
+//     }
+//   }
+// }
 @media screen and (max-device-width: 480px) {
   .login_box {
     top: 0;
@@ -66,12 +106,52 @@
         color: $dark-grey !important;
         margin-bottom: 30px;
         border-radius: 0;
-        width: 90.5%;
+        width: 90%;
         @include font-size(80);
       }
       input[type='submit']{
         background: $light-blue;
         width: 100%;
+
+        &:hover {
+          background: $medium-dark-light-blue;
+        }
+      }
+    }
+    .title {
+      padding: 30px;
+    }
+
+    .flash_box {
+      color: $orange;
+      width: 90%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+  }
+}
+@media screen and (min-device-width: 480px) and (max-device-width: 720px) {
+  .login_box {
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    @include font-size(60);
+
+    .form{
+      padding: 30px;
+      input {
+        color: $dark-grey !important;
+        margin-bottom: 30px;
+        border-radius: 0;
+        width: 850px;
+        @include font-size(80);
+      }
+      input[type='submit']{
+        background: $light-blue;
+        width: 855px;
+        border: 0;
 
         &:hover {
           background: $medium-dark-light-blue;

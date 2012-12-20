@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to "/dashboard"
     else
-      flash[:error] = "Invalid email/password combination!"
+      flash[:error] = "Invalid username/password combination!"
       render 'new'
     end
   end
