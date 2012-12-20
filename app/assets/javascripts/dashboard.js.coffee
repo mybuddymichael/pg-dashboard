@@ -11,14 +11,7 @@ window.addEventListener('load', ->
 $(document).ready ->
   new Dashboard.utils.AutoRefresher()
   setInterval(clock_count, 1000)
-  # userAgent = navigator.userAgent.toLowerCase();
-  # isIphone = (userAgent.indexOf('iphone') != -1) ? true : false;
-  # if isIphone
-  #   onclick = "$(this).find('.details').slideToggle()"
-  #   $('.icp').bind 'tap', ->
-  #     $(this).find('.details').slideToggle()
-  # else
-  $('.icp').on "click", ->
+  $('.icp').live "click", ->
     $(this).find('.details').slideToggle()
 
 clock_count = ->

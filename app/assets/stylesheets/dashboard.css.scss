@@ -2,7 +2,7 @@
 
 @media screen and (max-device-width: 480px) {
   header {
-    @include font-size(60);
+    @include font-size(45);
     background: $black;
     color: $white;
     text-align: center;
@@ -14,7 +14,7 @@
     .refresh_div { display: none; }
     .clock {
       margin-right: 15px;
-      @include font-size(60);
+      @include font-size(45);
     }
     .sign_out_link {
       margin-right: 15px;
